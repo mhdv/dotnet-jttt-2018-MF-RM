@@ -187,5 +187,20 @@ namespace WpfApp2
                 return false;
             }
         }
+
+
+        private void urlBox_OnGotFocus(object sender, RoutedEventArgs e)
+        {
+            urlBox.Text = "";
+        }
+        private void textBox_OnGotFocus(object sender, RoutedEventArgs e)
+        {
+            textBox.Text = "";
+        }
+        private void mailBox_OnGotFocus(object sender, RoutedEventArgs e)
+        {
+            mailBox.Text = "";
+        }
+
     }
 }
