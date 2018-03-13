@@ -66,6 +66,7 @@ namespace WpfApp2
 
         public void work()
         {
+            
             SolidColorBrush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF283655"));
             Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => 
             {
@@ -139,6 +140,7 @@ namespace WpfApp2
                                     message.Attachments.Add(attachment);
                                     smtp.Send(message);
                                     outputBox.Text = "Poprawnie wysłano wiadomość";
+                                    System.IO.File.AppendAllText("./log.log", "Tekst: " + textBox.Text + " URL: " + urlBox.Text + " EMAIL: " + mailBox.Text+"\n");
                                     outputBox.Background = Brushes.Green;
                                 }
                                 return;
