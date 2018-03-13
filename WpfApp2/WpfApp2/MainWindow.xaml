@@ -17,11 +17,11 @@
             <DockPanel.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
 
-                    <GradientStop Color="#FF1E1F26" Offset="0" />
+                    <GradientStop Color="Black" Offset="0.1" />
 
-                    <GradientStop Color="Black" Offset="0.5" />
+                    <GradientStop Color="#FF26272B" Offset="0.5" />
 
-                    <GradientStop Color="#383940" Offset="1.5" />
+                    <GradientStop Color="Black" Offset="0.8" />
 
 
                 </LinearGradientBrush>
@@ -29,17 +29,17 @@
         </DockPanel>
 
         <Label x:Name="jtttTxt" HorizontalContentAlignment="Center" Content="JTTT" HorizontalAlignment="Center" Margin="110,0,110.6,0" VerticalAlignment="Top" Height="100" Width="173" FontSize="48" FontWeight="Bold" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
-        <TextBox x:Name="urlBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="21" Margin="70,136,69.6,0" TextWrapping="Wrap" Text="Wprowadź URL strony" VerticalAlignment="Top" Width="254" Background="#FF283655" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="urlBox_OnGotFocus"/>
-        <TextBox x:Name="textBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="21" Margin="70,188,69.6,0" TextWrapping="Wrap" Text="Podaj tekst do wyszukania" VerticalAlignment="Top" Width="254" Background="#FF283655" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="textBox_OnGotFocus"/>
-        <TextBox x:Name="mailBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="21" Margin="70,324,69.6,0" TextWrapping="Wrap" Text="Podaj mail na który wysłać obrazek" VerticalAlignment="Top" Width="254" Background="#FF283655" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="mailBox_OnGotFocus"/>
+        <TextBox x:Name="urlBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="21" Margin="70,136,69.6,0" TextWrapping="Wrap" Text="Wprowadź URL strony" VerticalAlignment="Top" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="urlBox_OnGotFocus"/>
+        <TextBox x:Name="textBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="21" Margin="70,188,69.6,0" TextWrapping="Wrap" Text="Podaj tekst do wyszukania" VerticalAlignment="Top" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="textBox_OnGotFocus"/>
+        <TextBox x:Name="mailBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="21" Margin="70,324,69.6,0" TextWrapping="Wrap" Text="Podaj mail na który wysłać obrazek" VerticalAlignment="Top" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="mailBox_OnGotFocus"/>
         <Label x:Name="urlTxt" HorizontalContentAlignment="Center" Content="URL" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="182,112,181.6,0" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Width="70"/>
         <Label x:Name="urlTxt_Copy" HorizontalContentAlignment="Center" Content=" TEKST" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="163,164,162.6,0" Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
-        <Button x:Name="startBtn" Content="START" HorizontalAlignment="Center" Margin="0,454,0,0" VerticalAlignment="Top" Width="84" Click="startBtn_Click" BorderBrush="#FF4D648D" Background="#FF283655" Foreground="#FF8DAFEB" FontFamily="Showcard Gothic"/>
+        <Button x:Name="startBtn" Content="START" HorizontalAlignment="Center" Margin="0,454,0,0" VerticalAlignment="Top" Width="84" Click="startBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20"/>
         <Label x:Name="jesliTxt" HorizontalContentAlignment="Center" Content="JEŚLI TO" HorizontalAlignment="Center" Margin="110,56,110.6,0" VerticalAlignment="Top" Height="66" Width="173" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
         <Label x:Name="jesli2Txt" HorizontalContentAlignment="Center" Content="WYKONAJ TO" HorizontalAlignment="Center" Margin="73,234,72.6,0" VerticalAlignment="Top" Height="100" Width="248" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
         <Label x:Name="urlTxt_Copy1" HorizontalContentAlignment="Center" Content="MAIL" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="163,300,162.6,0" Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
         <Label x:Name="komunikaty" HorizontalContentAlignment="Center" Content="Praca programu" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="150,366,149.6,0" Width="94" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
-        <TextBox x:Name="outputBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="21" Margin="70,390,69.6,0" TextWrapping="Wrap" Text="Oczekuje na użytkownika" VerticalAlignment="Top" Width="254" Background="#FF283655" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" IsReadOnly="True"/>
+        <TextBox x:Name="outputBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="21" Margin="70,390,69.6,0" TextWrapping="Wrap" Text="Oczekuje na użytkownika" VerticalAlignment="Top" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" IsReadOnly="True"/>
 
     </Grid>
 </Window>
