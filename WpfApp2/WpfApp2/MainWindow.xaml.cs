@@ -140,7 +140,7 @@ namespace WpfApp2
                                     message.Attachments.Add(attachment);
                                     smtp.Send(message);
                                     outputBox.Text = "Poprawnie wysłano wiadomość";
-                                    System.IO.File.AppendAllText("./log.log", "Tekst: " + textBox.Text + " URL: " + urlBox.Text + " EMAIL: " + mailBox.Text+"\n");
+                                    System.IO.File.AppendAllText("./log.log", "Tekst: " + textBox.Text + " URL: " + urlBox.Text + " EMAIL: " + mailBox.Text+"\r\n");
                                     outputBox.Background = Brushes.Green;
                                 }
                                 return;
