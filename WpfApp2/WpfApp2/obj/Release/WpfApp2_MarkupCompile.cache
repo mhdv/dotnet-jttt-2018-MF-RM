@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\
+C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Release\
 WpfApp2
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\App.xaml
 11151548125
 
@@ -16,5 +16,5 @@ C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\App.xaml
 14-1790490152
 MainWindow.xaml;
 
-False
+True
 

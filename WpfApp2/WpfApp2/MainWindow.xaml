@@ -5,21 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="400">
+        Title="MainWindow" Height="585.6" Width="400" Background="#FF1E1F26">
     <Grid>
-        <Label x:Name="jtttTxt" Content="JTTT" HorizontalAlignment="Left" Margin="140,0,0,0" VerticalAlignment="Top" Height="100" Width="173" FontSize="48"/>
-        <TextBox x:Name="urlBox" HorizontalAlignment="Left" Height="21" Margin="72,138,0,0" TextWrapping="Wrap" Text="Wprowadź URL strony" VerticalAlignment="Top" Width="254"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="21" Margin="72,188,0,0" TextWrapping="Wrap" Text="Podaj tekst do wyszukania" VerticalAlignment="Top" Width="254"/>
-        <Label x:Name="urlTxt" Content="URL" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="178,112,0,0"/>
-        <Label x:Name="urlTxt_Copy" Content=" TEKST" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="169,164,0,0" Width="68"/>
-        <Button x:Name="startBtn" Content="START" HorizontalAlignment="Left" Margin="153,431,0,0" VerticalAlignment="Top" Width="84" Click="startBtn_Click"/>
-        <Label x:Name="jesliTxt" Content="JEŚLI TO" HorizontalAlignment="Left" Margin="122,56,0,0" VerticalAlignment="Top" Height="100" Width="173" FontSize="36"/>
-        <Label x:Name="jesli2Txt" Content="WYKONAJ TO" HorizontalAlignment="Left" Margin="78,214,0,0" VerticalAlignment="Top" Height="100" Width="248" FontSize="36"/>
-        <TextBox x:Name="mailBox" HorizontalAlignment="Left" Height="21" Margin="72,300,0,0" TextWrapping="Wrap" Text="Podaj mail na który wysłać obrazek" VerticalAlignment="Top" Width="254"/>
-        <Label x:Name="urlTxt_Copy1" Content="MAIL" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="169,274,0,0" Width="68"/>
-        <Label x:Name="label1" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="99,100,0,0" VerticalAlignment="Top" Height="39" Width="245"/>
-        <Label x:Name="label2" Content="&#xA;" HorizontalAlignment="Left" Margin="72,151,0,0" VerticalAlignment="Top" Height="39" Width="272"/>
-        <Label x:Name="label3" Content="&#xA;" HorizontalAlignment="Left" Margin="54,456,0,0" VerticalAlignment="Top" Height="39" Width="272"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="jtttTxt" HorizontalContentAlignment="Center" Content="JTTT" HorizontalAlignment="Center" Margin="110,0,110.6,0" VerticalAlignment="Top" Height="100" Width="173" FontSize="48" FontWeight="Bold" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
+        <TextBox x:Name="urlBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="21" Margin="70,136,69.6,0" TextWrapping="Wrap" Text="Wprowadź URL strony" VerticalAlignment="Top" Width="254" Background="#FF283655" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D"/>
+        <TextBox x:Name="textBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="21" Margin="70,188,69.6,0" TextWrapping="Wrap" Text="Podaj tekst do wyszukania" VerticalAlignment="Top" Width="254" Background="#FF283655" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D"/>
+        <Label x:Name="urlTxt" HorizontalContentAlignment="Center" Content="URL" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="182,112,181.6,0" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
+        <Label x:Name="urlTxt_Copy" HorizontalContentAlignment="Center" Content=" TEKST" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="163,164,162.6,0" Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
+        <Button x:Name="startBtn" Content="START" HorizontalAlignment="Left" Margin="153,454,0,0" VerticalAlignment="Top" Width="84" Click="startBtn_Click" BorderBrush="#FF4D648D" Background="#FF283655" Foreground="#FF8DAFEB" FontFamily="Showcard Gothic"/>
+        <Label x:Name="jesliTxt" HorizontalContentAlignment="Center" Content="JEŚLI TO" HorizontalAlignment="Center" Margin="110,56,110.6,0" VerticalAlignment="Top" Height="66" Width="173" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
+        <Label x:Name="jesli2Txt" HorizontalContentAlignment="Center" Content="WYKONAJ TO" HorizontalAlignment="Center" Margin="73,234,72.6,0" VerticalAlignment="Top" Height="100" Width="248" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
+        <TextBox x:Name="mailBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="21" Margin="70,324,69.6,0" TextWrapping="Wrap" Text="Podaj mail na który wysłać obrazek" VerticalAlignment="Top" Width="254" Background="#FF283655" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D"/>
+        <Label x:Name="urlTxt_Copy1" HorizontalContentAlignment="Center" Content="MAIL" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="163,300,162.6,0" Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
+        <Label x:Name="komunikaty" HorizontalContentAlignment="Center" Content="Praca programu" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="150,366,149.6,0" Width="94" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
+        <TextBox x:Name="outputBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="21" Margin="70,390,69.6,0" TextWrapping="Wrap" Text="Oczekuje na użytkownika" VerticalAlignment="Top" Width="254" Background="#FF283655" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" IsReadOnly="True"/>
 
     </Grid>
 </Window>
