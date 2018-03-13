@@ -102,10 +102,6 @@ namespace WpfApp2
                         if (!imageExist) { outputBox.Text = "Nie znaleziono słowa na stronie"; outputBox.Background = Brushes.Red; }
                         else
                         {
-                            outputBox.Text = "";
-
-                            outputBox.Background = brush;
-
                             string localFilename = @".\meme.png";
                             using (WebClient client = new WebClient())
                             {
