@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
+using System.Xml.Serialization;
 
 namespace WpfApp2
 {
@@ -11,7 +13,7 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        public BindingList<JTTT> tasksList = new BindingList<JTTT>();
 
         public MainWindow()
         {
@@ -40,13 +42,13 @@ namespace WpfApp2
 
         private void startBtn_Click(object sender, RoutedEventArgs e)
         {
+            tasksListBox.ItemsSource = tasksList;
+            tasksListBox.UpdateLayout();
             StartWork();
         }
 
         public void work()
         {
-            Color color = (Color)ColorConverter.ConvertFromString("#FF283655");
-            SolidColorBrush brush = new SolidColorBrush(color);
             Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
             {
                 JTTT newTask = new JTTT();
@@ -60,34 +62,7 @@ namespace WpfApp2
                 }
                 else
                 {
-                    newTask.work();
-                    switch (newTask.errorStr)
-                    {
-                        case "image":
-                            outputBox.Background = Brushes.Red;
-                            outputBox.Text = "Nie znaleziono obrazka";
-                            break;
-                        case "internet":
-                            outputBox.Background = Brushes.Red;
-                            outputBox.Text = "Brak połączenia z internetem";
-                            break;
-                        case "mail":
-                            outputBox.Background = Brushes.Red;
-                            outputBox.Text = "Adres mail jest niepoprawny";
-                            break;
-                        case "address":
-                            outputBox.Background = Brushes.Red;
-                            outputBox.Text = "Adres URL jest niepoprawny";
-                            break;
-                        case "complete":
-                            outputBox.Background = Brushes.Green;
-                            outputBox.Text = "Pomyślnie wysłano wiadomość";
-                            break;
-                        default:
-                            outputBox.Background = brush;
-                            outputBox.Text = "Oczekiwanie na użytkownika";
-                            break;
-                    }
+                    tasksList.Add(newTask);
                 }
             }));
         }
@@ -95,16 +70,83 @@ namespace WpfApp2
 
         private void urlBox_OnGotFocus(object sender, RoutedEventArgs e)
         {
-            urlBox.Text = "";
+            if(urlBox.Text == "Wprowadź URL strony")
+                urlBox.Text = "";
         }
         private void textBox_OnGotFocus(object sender, RoutedEventArgs e)
         {
-            textBox.Text = "";
+            if (textBox.Text == "Podaj tekst do wyszukania")
+                textBox.Text = "";
         }
         private void mailBox_OnGotFocus(object sender, RoutedEventArgs e)
         {
-            mailBox.Text = "";
+            if (mailBox.Text == "Podaj mail na który wysłać obrazek")
+                mailBox.Text = "";
         }
 
+        private void workBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Color color = (Color)ColorConverter.ConvertFromString("#FF283655");
+            SolidColorBrush brush = new SolidColorBrush(color);
+            for (int i=0; i<tasksList.Count; ++i)
+            {
+                tasksList[i].work();
+                switch (tasksList[i].errorStr)
+                {
+                    case "image":
+                        outputBox.Background = Brushes.Red;
+                        outputBox.Text = "Nie znaleziono obrazka";
+                        break;
+                    case "internet":
+                        outputBox.Background = Brushes.Red;
+                        outputBox.Text = "Brak połączenia z internetem";
+                        break;
+                    case "mail":
+                        outputBox.Background = Brushes.Red;
+                        outputBox.Text = "Adres mail jest niepoprawny";
+                        break;
+                    case "address":
+                        outputBox.Background = Brushes.Red;
+                        outputBox.Text = "Adres URL jest niepoprawny";
+                        break;
+                    case "complete":
+                        outputBox.Background = Brushes.Green;
+                        outputBox.Text = "Pomyślnie wysłano wiadomość";
+                        break;
+                    default:
+                        outputBox.Background = brush;
+                        outputBox.Text = "Oczekiwanie na użytkownika";
+                        break;
+                }
+            }  
+        }
+
+        private void clearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            tasksList.Clear();
+        }
+
+        private void deserBtn_Click(object sender, RoutedEventArgs e)
+        {
+            tasksList.Clear();
+            using (var stream = new FileStream("serial.xml", FileMode.Open))
+            {
+                var XML = new XmlSerializer(typeof(BindingList<JTTT>));
+                tasksList = (BindingList<JTTT>)XML.Deserialize(stream);
+            }
+            tasksListBox.ItemsSource = tasksList;
+        }
+
+        private void serBtn_click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < tasksList.Count; ++i)
+            {
+                using (var stream = new FileStream("serial.xml", FileMode.Create))
+                {
+                    XmlSerializer XML = new XmlSerializer(typeof(BindingList<JTTT>));
+                    XML.Serialize(stream, tasksList);
+                }
+            }
+        }
     }
 }

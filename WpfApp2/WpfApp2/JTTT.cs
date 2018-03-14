@@ -1,7 +1,9 @@
 ﻿using HtmlAgilityPack;
 using System;
+using System.IO;
 using System.Net;
 using System.Net.Mail;
+using System.Xml.Serialization;
 
 namespace WpfApp2
 {
@@ -12,6 +14,8 @@ namespace WpfApp2
         public string mail = "";
         public string filename = "";
         public string errorStr = "";
+
+        public override string ToString() => "NA STRONIE: " + url + ", ZNAJDŹ: " + text + ", ORAZ WYŚLIJ NA: " + mail;
 
         public string FindImage(WebClient site)
         {
@@ -169,11 +173,5 @@ namespace WpfApp2
             }
             else errorStr = "address";
         }
-       
-       
-
     }
-
-  
-
 }
