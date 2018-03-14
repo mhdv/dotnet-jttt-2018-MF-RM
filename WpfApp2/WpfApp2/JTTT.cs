@@ -113,7 +113,7 @@ namespace WpfApp2
                 {
                     message.Attachments.Add(attachment);
                     smtp.Send(message);    
-                    System.IO.File.AppendAllText("./log.log", "Tekst: " + this.text + " URL: " + this.url + " EMAIL: " + this.mail + "\r\n");
+                    System.IO.File.AppendAllText("./jttt.log", "Tekst: " + this.text + " URL: " + this.url + " EMAIL: " + this.mail + "\r\n");
                 }
                 errorStr = "complete";
                 return true;
