@@ -32,8 +32,8 @@ namespace WpfApp2
 
        public void StartWork()
         {
-            outputBox.Text = "Pracuje, czekaj...";
-            outputBox.Background = Brushes.OrangeRed;
+            outputBox.Text = "Dodano do listy";
+            outputBox.Background = Brushes.Green;
             BackgroundWorker worker = new BackgroundWorker();
             worker.DoWork += DoWork;
             worker.RunWorkerCompleted += WorkerCompleted;
@@ -55,7 +55,7 @@ namespace WpfApp2
                 newTask.url = urlBox.Text;
                 newTask.text = textBox.Text;
                 newTask.mail = mailBox.Text;
-                if (newTask.url == "" || newTask.text == "" || newTask.mail == "")
+                if (newTask.url == "" || newTask.text == "" || newTask.mail == "" || newTask.url == "Wprowadź URL strony" || newTask.text == "Podaj tekst do wyszukania" || newTask.mail == "Podaj mail na który wysłać obrazek")
                 {
                     outputBox.Background = Brushes.Red;
                     outputBox.Text = "Wypełnij wszystkie pola";
