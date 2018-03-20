@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ArrayOfJTTT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <JTTT>
+    <url>htp</url>
+    <text>Podaj tekst do wyszukania</text>
+    <mail>Podaj mail na który wysłać obrazek</mail>
+    <filename />
+    <errorStr>address</errorStr>
+  </JTTT>
+  <JTTT>
+    <url>htp</url>
+    <text>v</text>
+    <mail>Podaj mail na który wysłać obrazek</mail>
+    <filename />
+    <errorStr>address</errorStr>
+  </JTTT>
+</ArrayOfJTTT>

@@ -10,11 +10,12 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition/>
             <RowDefinition/>
@@ -25,10 +26,10 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="12">
+        <Rectangle Grid.ColumnSpan="3" Grid.RowSpan="12">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
 
@@ -45,17 +46,22 @@
 
 
         <Label x:Name="jtttTxt" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="JTTT"  Width="173" FontSize="48" FontWeight="Bold" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
-        <TextBox x:Name="urlBox" Grid.Row="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="21" TextWrapping="Wrap" Text="Wprowadź URL strony" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="urlBox_OnGotFocus"/>
-        <TextBox x:Name="textBox" Grid.Row="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="21" TextWrapping="Wrap" Text="Podaj tekst do wyszukania"  Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="textBox_OnGotFocus"/>
-        <TextBox x:Name="mailBox" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="21" TextWrapping="Wrap" Text="Podaj mail na który wysłać obrazek"  Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="mailBox_OnGotFocus"/>
-        <Label x:Name="urlLabel" Grid.Row="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="URL"   Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Width="70"/>
-        <Label x:Name="textLabel" Grid.Row="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content=" TEKST"  Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
-        <Button x:Name="startBtn" Grid.Row="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="START"  Width="84" Click="startBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30"/>
+        <TextBox x:Name="urlBox" Grid.Row="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Wprowadź URL strony" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="urlBox_OnGotFocus" FontSize="16"/>
+        <TextBox x:Name="textBox" Grid.Row="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Podaj tekst do wyszukania"  Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="textBox_OnGotFocus" FontSize="16"/>
+        <TextBox x:Name="mailBox" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Podaj mail do wysłania obrazka"  Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="mailBox_OnGotFocus" FontSize="16"/>
+        <Label x:Name="urlLabel" Grid.Row="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="URL"   Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Width="70" FontSize="16"/>
+        <Label x:Name="textLabel" Grid.Row="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content=" TEKST"  Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" FontSize="16"/>
+        <Button x:Name="startBtn" Grid.Row="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="DODAJ"  Width="84" Click="startBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30"/>
         <Label x:Name="jesliTxt" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="JEŚLI TO" HorizontalAlignment="Center"  Height="66" Width="173" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
         <Label x:Name="jesli2Txt" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYKONAJ TO" Width="248" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
-        <Label x:Name="mailLabel" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="MAIL"  Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
-        <Label x:Name="komunikaty" Grid.Row="9" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Praca programu" Width="94" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
-        <TextBox x:Name="outputBox" Grid.Row="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="21" TextWrapping="Wrap" Text="Oczekuje na użytkownika" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" IsReadOnly="True"/>
+        <Label x:Name="mailLabel" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="MAIL"  Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" FontSize="16"/>
+        <Label x:Name="komunikaty" Grid.Row="9" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Praca programu" Width="114" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" FontSize="16"/>
+        <TextBox x:Name="outputBox" Grid.Row="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Oczekuje na użytkownika" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" IsReadOnly="True" FontSize="16"/>
+        <ListBox x:Name="tasksListBox" Grid.Row="1" Grid.RowSpan="6" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="239" VerticalAlignment="Center" Width="333" Background="#FF343946" AlternationCount="2"/>
+        <Button x:Name="workBtn" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYKONAJ" Click="workBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150" Grid.Column="1"/>
+        <Button x:Name="clearBtn" Grid.Row="9" Grid.RowSpan="2" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="CZYŚĆ" Click="clearBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" Width="150" FontSize="20" Height="30"/>
+        <Button x:Name="serBtn" Grid.Row="8" Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="SERIALIZUJ" Click="serBtn_click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150"/>
+        <Button x:Name="deserBtn" Grid.Row="9" Grid.RowSpan="2" Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="DESERIALIZUJ" Click="deserBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Width="150" Height="30"/>
 
     </Grid>
 </Window>
