@@ -67,6 +67,55 @@ namespace WpfApp2
             }));
         }
 
+        public void work_all()
+        {
+            Color color = (Color)ColorConverter.ConvertFromString("#FF283655");
+            SolidColorBrush brush = new SolidColorBrush(color);
+            outputBox.Background = Brushes.OrangeRed;
+            outputBox.Text = "Pracuję, czekaj...";
+            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
+            {
+                int errors = 0;
+            for (int i = 0; i < tasksList.Count; ++i)
+            {
+                tasksList[i].work();
+                switch (tasksList[i].errorStr)
+                {
+                    case "image":
+                        errors++;
+                        break;
+                    case "internet":
+                        errors++;
+                        break;
+                    case "mail":
+                        errors++;
+                        break;
+                    case "address":
+                        errors++;
+                        break;
+                    case "complete":
+                        break;
+                    default:
+                        outputBox.Background = brush;
+                        outputBox.Text = "Oczekiwanie na użytkownika";
+                        break;
+                }
+            }
+            if (errors == 0)
+            {
+                outputBox.Background = Brushes.Green;
+                outputBox.Text = "Wykonano pomyślnie";
+            }
+            else
+            {
+                outputBox.Background = Brushes.Red;
+                outputBox.Text = "Ilość błędów: " + errors.ToString();
+            }
+            tasksListBox.Items.Refresh();
+            }));
+        }
+    
+
 
         private void urlBox_OnGotFocus(object sender, RoutedEventArgs e)
         {
@@ -80,45 +129,13 @@ namespace WpfApp2
         }
         private void mailBox_OnGotFocus(object sender, RoutedEventArgs e)
         {
-            if (mailBox.Text == "Podaj mail na który wysłać obrazek")
+            if (mailBox.Text == "Podaj mail do wysłania obrazka")
                 mailBox.Text = "";
         }
 
         private void workBtn_Click(object sender, RoutedEventArgs e)
         {
-            Color color = (Color)ColorConverter.ConvertFromString("#FF283655");
-            SolidColorBrush brush = new SolidColorBrush(color);
-            for (int i=0; i<tasksList.Count; ++i)
-            {
-                tasksList[i].work();
-                switch (tasksList[i].errorStr)
-                {
-                    case "image":
-                        outputBox.Background = Brushes.Red;
-                        outputBox.Text = "Nie znaleziono obrazka";
-                        break;
-                    case "internet":
-                        outputBox.Background = Brushes.Red;
-                        outputBox.Text = "Brak połączenia z internetem";
-                        break;
-                    case "mail":
-                        outputBox.Background = Brushes.Red;
-                        outputBox.Text = "Adres mail jest niepoprawny";
-                        break;
-                    case "address":
-                        outputBox.Background = Brushes.Red;
-                        outputBox.Text = "Adres URL jest niepoprawny";
-                        break;
-                    case "complete":
-                        outputBox.Background = Brushes.Green;
-                        outputBox.Text = "Pomyślnie wysłano wiadomość";
-                        break;
-                    default:
-                        outputBox.Background = brush;
-                        outputBox.Text = "Oczekiwanie na użytkownika";
-                        break;
-                }
-            }  
+            work_all();
         }
 
         private void clearBtn_Click(object sender, RoutedEventArgs e)

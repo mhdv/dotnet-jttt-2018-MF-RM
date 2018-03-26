@@ -15,8 +15,15 @@ namespace WpfApp2
         public string filename = "";
         public string errorStr = "";
 
-        public override string ToString() => "NA STRONIE: " + url + ", ZNAJDŹ: " + text + ", ORAZ WYŚLIJ NA: " + mail;
-
+        public override string ToString()
+        {
+            if(errorStr == "")
+                return "NA STRONIE: " + url + ", ZNAJDŹ: " + text + ", ORAZ WYŚLIJ NA: " + mail;
+            else if(errorStr == "complete")
+                return "SUKCES! NA STRONIE: " + url + ", ZNAJDŹ: " + text + ", ORAZ WYŚLIJ NA: " + mail;
+            else
+                return "BŁĄD! NA STRONIE: "+ url + ", ZNAJDŹ: " + text + ", ORAZ WYŚLIJ NA: " + mail;
+        }
         public string FindImage(WebClient site)
         {
             string linkToImage = "";

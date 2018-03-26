@@ -1,17 +1,38 @@
 <?xml version="1.0"?>
 <ArrayOfJTTT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <JTTT>
-    <url>htp</url>
-    <text>Podaj tekst do wyszukania</text>
-    <mail>Podaj mail na który wysłać obrazek</mail>
+    <url>https://demotywatory.pl</url>
+    <text>oblicze</text>
+    <mail>mehowpol@gmail.com</mail>
     <filename />
-    <errorStr>address</errorStr>
+    <errorStr />
   </JTTT>
   <JTTT>
-    <url>htp</url>
-    <text>v</text>
-    <mail>Podaj mail na który wysłać obrazek</mail>
+    <url>https://demotywatory.pl</url>
+    <text>gowo</text>
+    <mail>mehowpol@gmail.com</mail>
     <filename />
-    <errorStr>address</errorStr>
+    <errorStr />
+  </JTTT>
+  <JTTT>
+    <url>https://demotywatory.pl</url>
+    <text>gowo</text>
+    <mail>mehowpol@gmail.com</mail>
+    <filename />
+    <errorStr />
+  </JTTT>
+  <JTTT>
+    <url>https://demotywatory.pl</url>
+    <text>gowo</text>
+    <mail>mehawhawg</mail>
+    <filename />
+    <errorStr />
+  </JTTT>
+  <JTTT>
+    <url>https://demotywatory.pl</url>
+    <text>gowo</text>
+    <mail>mehawhawg</mail>
+    <filename />
+    <errorStr />
   </JTTT>
 </ArrayOfJTTT>
