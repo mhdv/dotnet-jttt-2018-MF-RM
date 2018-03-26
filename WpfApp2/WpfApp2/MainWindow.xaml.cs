@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.IO;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
 using System.Xml.Serialization;
+using System.Linq;
 
 namespace WpfApp2
 {
@@ -14,10 +17,13 @@ namespace WpfApp2
     public partial class MainWindow : Window
     {
         public BindingList<JTTT> tasksList = new BindingList<JTTT>();
+        SQLdb myDB = new SQLdb();
 
         public MainWindow()
         {
-            InitializeComponent();
+            tasksList = myDB.getData();
+            tasksListBox.ItemsSource = tasksList;
+            tasksListBox.UpdateLayout();
         }
 
         private void DoWork(object sender, DoWorkEventArgs e)
@@ -42,8 +48,8 @@ namespace WpfApp2
 
         private void startBtn_Click(object sender, RoutedEventArgs e)
         {
-            tasksListBox.ItemsSource = tasksList;
-            tasksListBox.UpdateLayout();
+            //tasksListBox.ItemsSource = tasksList;
+            //tasksListBox.UpdateLayout();
             StartWork();
         }
 
@@ -62,7 +68,15 @@ namespace WpfApp2
                 }
                 else
                 {
-                    tasksList.Add(newTask);
+                    myDB.dbAdd(newTask.url, newTask.text, newTask.mail);
+                    tasksList = myDB.getData();
+                    /*DataTable table = myDB.getData();
+                    foreach(var data in table.AsEnumerable().ToList())
+                    {
+                        tasksList.Add((JTTT)data[data.Table.Columns[0].ColumnName]);
+                    }*/
+                    //tasksListBox.ItemsSource = tasksList;
+                    tasksListBox.UpdateLayout();
                 }
             }));
         }
@@ -141,29 +155,6 @@ namespace WpfApp2
         private void clearBtn_Click(object sender, RoutedEventArgs e)
         {
             tasksList.Clear();
-        }
-
-        private void deserBtn_Click(object sender, RoutedEventArgs e)
-        {
-            tasksList.Clear();
-            using (var stream = new FileStream("serial.xml", FileMode.Open))
-            {
-                var XML = new XmlSerializer(typeof(BindingList<JTTT>));
-                tasksList = (BindingList<JTTT>)XML.Deserialize(stream);
-            }
-            tasksListBox.ItemsSource = tasksList;
-        }
-
-        private void serBtn_click(object sender, RoutedEventArgs e)
-        {
-            for (int i = 0; i < tasksList.Count; ++i)
-            {
-                using (var stream = new FileStream("serial.xml", FileMode.Create))
-                {
-                    XmlSerializer XML = new XmlSerializer(typeof(BindingList<JTTT>));
-                    XML.Serialize(stream, tasksList);
-                }
-            }
         }
     }
 }
