@@ -19,20 +19,12 @@ namespace WpfApp2
         public BindingList<JTTT> tasksList = new BindingList<JTTT>();
         SQLdb myDB = new SQLdb();
 
+
         public MainWindow()
         {
 
-            using (var ctx = new JTTTdbcontext())
-            {
-                myDB.addToDb(ctx);
-                foreach (var t in ctx.task)
-                {
-                    Console.WriteLine("-----------");
-                    Console.WriteLine(t);
-                }
-            }
-
         }
+
 
         private void DoWork(object sender, DoWorkEventArgs e)
         {
@@ -160,6 +152,33 @@ namespace WpfApp2
         private void clearBtn_Click(object sender, RoutedEventArgs e)
         {
             tasksList.Clear();
+        }
+
+        public void tasksList_update()
+        {
+            tasksList.Clear();
+
+            using (var ctx = new JTTTdbcontext())
+            {
+                //myDB.addToDb(ctx);
+                //foreach (var t in ctx.task)
+                //{
+
+                //}
+
+                var query = from b in ctx.task orderby b.ID select b;
+
+                foreach (var item in query)
+                {
+                    JTTT tmp = new JTTT();
+                    tmp.url = item.URL;
+                    tmp.text = item.text;
+                    tmp.mail = item.mail;
+                    tasksList.Add(tmp);//(item.ID + "." + " " + item.URL + " " + item.text + " " + item.mail);
+                }
+
+            }
+
         }
     }
 }

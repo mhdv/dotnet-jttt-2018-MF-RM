@@ -17,7 +17,7 @@ namespace WpfApp2
 
         public override string ToString()
         {
-            return URL + text + mail;
+            return URL + " " + text + " " + mail;
         }
     }
 }
