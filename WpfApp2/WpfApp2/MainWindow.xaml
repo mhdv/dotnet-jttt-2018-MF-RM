@@ -61,6 +61,7 @@
         <Button x:Name="workBtn" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYKONAJ" Click="workBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150" Grid.Column="1"/>
         <Button x:Name="clearBtn" Grid.Row="9" Grid.RowSpan="2" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="CZYŚĆ" Click="clearBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" Width="150" FontSize="20" Height="30"/>
             <Label x:Name="listaTxt" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="LISTA ZADAŃ" Width="248" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Margin="112.8,0"/>
+            <Button x:Name="templateBtn" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="TEMPLATE" Click="templateBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150" Grid.Column="2"/>
 
         </Grid>
     </Viewbox>

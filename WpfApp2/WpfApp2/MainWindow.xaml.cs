@@ -21,9 +21,17 @@ namespace WpfApp2
 
         public MainWindow()
         {
-            tasksList = myDB.getData();
-            tasksListBox.ItemsSource = tasksList;
-            tasksListBox.UpdateLayout();
+
+            using (var ctx = new JTTTdbcontext())
+            {
+                myDB.addToDb(ctx);
+                foreach (var t in ctx.task)
+                {
+                    Console.WriteLine("-----------");
+                    Console.WriteLine(t);
+                }
+            }
+
         }
 
         private void DoWork(object sender, DoWorkEventArgs e)
@@ -48,8 +56,6 @@ namespace WpfApp2
 
         private void startBtn_Click(object sender, RoutedEventArgs e)
         {
-            //tasksListBox.ItemsSource = tasksList;
-            //tasksListBox.UpdateLayout();
             StartWork();
         }
 
@@ -68,15 +74,7 @@ namespace WpfApp2
                 }
                 else
                 {
-                    myDB.dbAdd(newTask.url, newTask.text, newTask.mail);
-                    tasksList = myDB.getData();
-                    /*DataTable table = myDB.getData();
-                    foreach(var data in table.AsEnumerable().ToList())
-                    {
-                        tasksList.Add((JTTT)data[data.Table.Columns[0].ColumnName]);
-                    }*/
-                    //tasksListBox.ItemsSource = tasksList;
-                    tasksListBox.UpdateLayout();
+                
                 }
             }));
         }
@@ -150,6 +148,13 @@ namespace WpfApp2
         private void workBtn_Click(object sender, RoutedEventArgs e)
         {
             work_all();
+        }
+
+        private void templateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            urlBox.Text = "http://demotywatory.pl";
+            textBox.Text = "Polska";
+            mailBox.Text = "mehowpol@gmail.com";
         }
 
         private void clearBtn_Click(object sender, RoutedEventArgs e)

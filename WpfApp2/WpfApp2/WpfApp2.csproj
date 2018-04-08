@@ -34,10 +34,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HtmlAgilityPack, Version=1.7.1.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>..\packages\HtmlAgilityPack.1.7.1\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.7.2.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.7.2\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +64,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="JTTTdb.cs" />
+    <Compile Include="JTTTdbcontext.cs" />
+    <Compile Include="Migrations\201804061049030_InitialCreate.cs" />
+    <Compile Include="Migrations\201804061049030_InitialCreate.Designer.cs">
+      <DependentUpon>201804061049030_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804061053142_nazwa-migracji-jaka-nam-przyszla-do-glowy.cs" />
+    <Compile Include="Migrations\201804061053142_nazwa-migracji-jaka-nam-przyszla-do-glowy.Designer.cs">
+      <DependentUpon>201804061053142_nazwa-migracji-jaka-nam-przyszla-do-glowy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804061101408_new-mig.cs" />
+    <Compile Include="Migrations\201804061101408_new-mig.Designer.cs">
+      <DependentUpon>201804061101408_new-mig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804061121293_new-mig543.cs" />
+    <Compile Include="Migrations\201804061121293_new-mig543.Designer.cs">
+      <DependentUpon>201804061121293_new-mig543.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SQLdb.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +112,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201804061049030_InitialCreate.resx">
+      <DependentUpon>201804061049030_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804061053142_nazwa-migracji-jaka-nam-przyszla-do-glowy.resx">
+      <DependentUpon>201804061053142_nazwa-migracji-jaka-nam-przyszla-do-glowy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804061101408_new-mig.resx">
+      <DependentUpon>201804061101408_new-mig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804061121293_new-mig543.resx">
+      <DependentUpon>201804061121293_new-mig543.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

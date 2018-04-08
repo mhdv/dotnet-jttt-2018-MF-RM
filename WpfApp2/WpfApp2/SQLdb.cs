@@ -9,52 +9,31 @@ using System.ComponentModel;
 
 namespace WpfApp2
 {
-    class SQLdb
+    public class SQLdb : System.Data.Entity.DropCreateDatabaseIfModelChanges<JTTTdbcontext>
     {
-        public DataTable dataTable = new DataTable();
-        public SqlConnection dbConnection;
-        public SqlCommand cmd;
-        public SqlDataReader myReader;
-
-        public SQLdb()
+        public void addToDb(JTTTdbcontext context)
         {
-            SqlConnectionStringBuilder dbInfo = new SqlConnectionStringBuilder();
-            dbInfo.DataSource = "RAFAL";
-            dbInfo.InitialCatalog = "JTTTdb";
-            dbInfo.IntegratedSecurity = true;
-            dbConnection = new SqlConnection(dbInfo.ToString());
-            cmd = new SqlCommand("Insert Into dbo.Table_1 (URL, KeyWord, Mail) VALUES (@URL, @KeyWord, @Mail)", dbConnection);
+            JTTTdb task;
+
+            // task = new JTTTdb() { task = new JTTT { url = "http://demotywatory.pl", text = "autobus", mail = "mehowpol@gmail.com" } };
+            task = new JTTTdb() { URL = "http://demotywatory.pl", text = "autobus", mail = "mehowpol@gmail.com" };
+            context.task.Add(task);
+
+            context.SaveChanges();
         }
 
-        public void dbAdd(string URL, string KeyWord, string Mail)
+        protected override void Seed(JTTTdbcontext context)
         {
-            cmd.Parameters.AddWithValue("@URL", URL);
-            cmd.Parameters.AddWithValue("@KeyWord", KeyWord);
-            cmd.Parameters.AddWithValue("@Mail", Mail);
-            dbConnection.Open();
-            myReader = cmd.ExecuteReader();
-            cmd.ExecuteNonQuery();
-        }
 
-        public BindingList<JTTT> getData()
-        {
-            //SqlDataAdapter tmp = new SqlDataAdapter(cmd);
-            //tmp.Fill(dataTable);
-            //tmp.Dispose();
-            //return dataTable;
-            dbConnection.Open();
-            BindingList<JTTT> tmp = new BindingList<JTTT>();
-            while (myReader.Read())
-            {
-                JTTT tmpObject = new JTTT();
-                tmpObject.url = myReader.GetString(0);
-                tmpObject.text = myReader.GetString(1);
-                tmpObject.mail = myReader.GetString(2);
-                tmp.Add(tmpObject);
-            }
-            return tmp;
-        }
+            JTTTdb task;
 
+            // task = new JTTTdb() { task = new JTTT { url = "http://demotywatory.pl", text = "autobus", mail = "mehowpol@gmail.com" } };
+            task = new JTTTdb() { URL = "http://demotywatory.pl", text = "autobus", mail = "mehowpol@gmail.com" };
+            context.task.Add(task);
+
+            context.SaveChanges();
+            base.Seed(context);
+        }
 
     }
 }

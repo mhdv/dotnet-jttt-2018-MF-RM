@@ -71,3 +71,11 @@ C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.cspr
 C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.CoreCompileInputs.cache
 C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.exe
 C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.pdb
+C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\EntityFramework.dll
+C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\EntityFramework.xml
+C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.InitialCreate.resources
+C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.nazwamigracjijakanamprzyszladoglowy.resources
+C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.newmig.resources
+C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.newmig543.resources
