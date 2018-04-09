@@ -14,6 +14,7 @@ namespace WpfApp2
         public string mail = "";
         public string filename = "";
         public string errorStr = "";
+        public int ID;
 
         public override string ToString()
         {

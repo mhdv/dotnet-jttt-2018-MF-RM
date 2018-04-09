@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="MainWindow" Height="533" Width="948" Background="#FF1E1F26">
+   
     <Viewbox MinHeight="503" MinWidth="948" Stretch="Fill">
      <Grid Height="533" Width="948">
 
@@ -57,11 +58,12 @@
         <Label x:Name="mailLabel" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="MAIL"  Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" FontSize="16"/>
         <Label x:Name="komunikaty" Grid.Row="9" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Praca programu" Width="114" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" FontSize="16"/>
         <TextBox x:Name="outputBox" Grid.Row="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Oczekuje na użytkownika" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" IsReadOnly="True" FontSize="16"/>
-        <ListBox x:Name="tasksListBox" Grid.Row="1" Grid.RowSpan="6" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="239" VerticalAlignment="Center" Width="333" Background="#FF343946" AlternationCount="2" SelectionChanged="tasksListBox_SelectionChanged"/>
-        <Button x:Name="workBtn" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYKONAJ" Click="workBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150" Grid.Column="1"/>
-        <Button x:Name="clearBtn" Grid.Row="9" Grid.RowSpan="2" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="CZYŚĆ" Click="clearBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" Width="150" FontSize="20" Height="30"/>
+            <ListBox x:Name="tasksListBox" Grid.Row="1" Grid.RowSpan="6" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="239" VerticalAlignment="Center" Width="333" Background="#FF343946" AlternationCount="2"/>
+            <Button x:Name="workBtn" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYKONAJ" Click="workBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150" Grid.Column="1"/>
+        <Button x:Name="clearBtn" Grid.Row="9" Grid.RowSpan="2" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="CZYŚĆ" Click="clearBtn_Click" BorderBrush="#FF4D648D" Background="Black" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" Width="150" FontSize="20" Height="30"/>
             <Label x:Name="listaTxt" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="LISTA ZADAŃ" Width="248" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Margin="112.8,0"/>
             <Button x:Name="templateBtn" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="TEMPLATE" Click="templateBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150" Grid.Column="2"/>
+            <Button x:Name="removeBtn" Grid.Row="9" Grid.RowSpan="2" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="USUŃ" Click="removeBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" Width="150" FontSize="20" Height="30" Margin="43.4,18.2"/>
 
         </Grid>
     </Viewbox>

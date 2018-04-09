@@ -14,15 +14,29 @@ namespace WpfApp2
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
+    ///
     public partial class MainWindow : Window
     {
         public BindingList<JTTT> tasksList = new BindingList<JTTT>();
+        
         SQLdb myDB = new SQLdb();
+        public bool firstRun = true;
 
+   
 
         public MainWindow()
         {
+            InitializeComponent();
+            tasksListBox.ItemsSource = tasksList;
+            updateList();
+        }
 
+     
+
+        public void updateList()
+        {
+            tasksList_update();
+            tasksListBox.UpdateLayout();
         }
 
 
@@ -49,6 +63,7 @@ namespace WpfApp2
         private void startBtn_Click(object sender, RoutedEventArgs e)
         {
             StartWork();
+            updateList();
         }
 
         public void work()
@@ -66,7 +81,13 @@ namespace WpfApp2
                 }
                 else
                 {
-                
+                    using(var ctx = new JTTTdbcontext())
+                    {
+                        JTTTdb tmpTask = new JTTTdb { URL = newTask.url, mail = newTask.mail, text = newTask.text };
+                        ctx.task.Add(tmpTask);
+                        ctx.SaveChanges();
+                    }
+                    updateList();
                 }
             }));
         }
@@ -151,7 +172,17 @@ namespace WpfApp2
 
         private void clearBtn_Click(object sender, RoutedEventArgs e)
         {
-            tasksList.Clear();
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("This will delete all data. Are you sure?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                using (var ctx = new JTTTdbcontext())
+                {
+                    ctx.Database.ExecuteSqlCommand("TRUNCATE TABLE [JTTTdbs]");
+                    ctx.SaveChanges();
+                }
+                updateList();
+            }
+
         }
 
         public void tasksList_update()
@@ -174,11 +205,39 @@ namespace WpfApp2
                     tmp.url = item.URL;
                     tmp.text = item.text;
                     tmp.mail = item.mail;
+                    tmp.ID = item.ID;
                     tasksList.Add(tmp);//(item.ID + "." + " " + item.URL + " " + item.text + " " + item.mail);
                 }
 
             }
 
+        }
+
+        private void removeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(tasksListBox.SelectedIndex==-1)
+            {
+                outputBox.Background = Brushes.Red;
+                outputBox.Text = "Nie zaznaczono elementu";
+            }
+            else
+            {
+                int tmpID = tasksList[tasksListBox.SelectedIndex].ID;
+                outputBox.Background = Brushes.Green;
+                outputBox.Text = "Usunięto";
+                using (var ctx = new JTTTdbcontext())
+                {
+                    JTTTdb tmp = new JTTTdb() { ID = tmpID };
+                    ctx.task.Attach(tmp);
+                    ctx.task.Remove(tmp);
+                    ctx.SaveChanges();
+                    //Console.WriteLine(tmpID);
+                    //Console.WriteLine(tasksList[tasksListBox.SelectedIndex].ID);
+
+                    //Console.WriteLine(tasksList[tasksListBox.SelectedIndex].ID);
+                }
+                updateList();
+            }
         }
     }
 }
