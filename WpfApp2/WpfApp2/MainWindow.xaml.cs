@@ -139,6 +139,47 @@ namespace WpfApp2
             tasksListBox.Items.Refresh();
             }));
         }
+
+        public void work_single()
+        {
+            Color color = (Color)ColorConverter.ConvertFromString("#FF343946");
+            SolidColorBrush brush = new SolidColorBrush(color);
+            outputBox.Background = Brushes.OrangeRed;
+            outputBox.Text = "Pracuję, czekaj...";
+            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
+            {
+               
+                    tasksList[tasksListBox.SelectedIndex].work();
+                    switch (tasksList[tasksListBox.SelectedIndex].errorStr)
+                    {
+                        case "image":
+                        outputBox.Background = Brushes.Red;
+                        outputBox.Text = "Nie znaleziono obrazka";
+                        break;
+                        case "internet":
+                        outputBox.Background = Brushes.Red;
+                        outputBox.Text = "Brak połączenia z internetem";
+                        break;
+                        case "mail":
+                        outputBox.Background = Brushes.Red;
+                        outputBox.Text = "Błędny adres e-mail";
+                            break;
+                        case "address":
+                        outputBox.Background = Brushes.Red;
+                        outputBox.Text = "Błędny adres strony";
+                        break;
+                        case "complete":
+                        outputBox.Background = Brushes.Green;
+                        outputBox.Text = "Wykonano pomyślnie";
+                            break;
+                        default:
+                            outputBox.Background = brush;
+                            outputBox.Text = "Oczekiwanie na użytkownika";
+                            break;
+                    }
+                tasksListBox.Items.Refresh();
+            }));
+        }
     
 
 
@@ -163,6 +204,26 @@ namespace WpfApp2
             work_all();
         }
 
+        private void sWorkBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (tasksListBox.SelectedIndex == -1)
+            {
+                outputBox.Background = Brushes.Red;
+                outputBox.Text = "Nie zaznaczono elementu";
+            }
+            else
+            {
+
+                Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
+                {
+                    outputBox.Background = Brushes.OrangeRed;
+                    outputBox.Text = "Pracuję, czekaj...";
+                }
+                ));
+                    work_single();
+            }
+        }
+
         private void templateBtn_Click(object sender, RoutedEventArgs e)
         {
             urlBox.Text = "http://demotywatory.pl";
@@ -172,16 +233,24 @@ namespace WpfApp2
 
         private void clearBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("This will delete all data. Are you sure?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
-            if (messageBoxResult == MessageBoxResult.Yes)
+            Window1 win1 = new Window1();
+            this.IsEnabled = false;
+            win1.ShowDialog();
+            if (Window1.agreed == true)
             {
+                Window1.agreed = false;
+
                 using (var ctx = new JTTTdbcontext())
                 {
                     ctx.Database.ExecuteSqlCommand("TRUNCATE TABLE [JTTTdbs]");
                     ctx.SaveChanges();
                 }
                 updateList();
+                
             }
+            win1.Close();
+            this.IsEnabled = true;
+
 
         }
 
@@ -191,12 +260,6 @@ namespace WpfApp2
 
             using (var ctx = new JTTTdbcontext())
             {
-                //myDB.addToDb(ctx);
-                //foreach (var t in ctx.task)
-                //{
-
-                //}
-
                 var query = from b in ctx.task orderby b.ID select b;
 
                 foreach (var item in query)
@@ -206,10 +269,11 @@ namespace WpfApp2
                     tmp.text = item.text;
                     tmp.mail = item.mail;
                     tmp.ID = item.ID;
-                    tasksList.Add(tmp);//(item.ID + "." + " " + item.URL + " " + item.text + " " + item.mail);
+                    tasksList.Add(tmp);
                 }
 
             }
+            isListEmpty();
 
         }
 
@@ -231,13 +295,36 @@ namespace WpfApp2
                     ctx.task.Attach(tmp);
                     ctx.task.Remove(tmp);
                     ctx.SaveChanges();
-                    //Console.WriteLine(tmpID);
-                    //Console.WriteLine(tasksList[tasksListBox.SelectedIndex].ID);
-
-                    //Console.WriteLine(tasksList[tasksListBox.SelectedIndex].ID);
                 }
                 updateList();
             }
+        }
+
+        public void isListEmpty()
+        {
+            if (tasksListBox.Items.Count == 0)
+            {
+                clearBtn.IsEnabled = false;
+                removeBtn.IsEnabled = false;
+                workBtn.IsEnabled = false;
+                sWorkBtn.IsEnabled = false;
+            }
+            else
+            {
+                clearBtn.IsEnabled = true;
+                removeBtn.IsEnabled = true;
+                workBtn.IsEnabled = true;
+                sWorkBtn.IsEnabled = true;
+            }
+        }
+
+        private void refreshBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Color color = (Color)ColorConverter.ConvertFromString("#FF343946");
+            SolidColorBrush brush = new SolidColorBrush(color);
+            updateList();
+            outputBox.Text = "Oczekuje na użytkownika";
+            outputBox.Background = brush;
         }
     }
 }

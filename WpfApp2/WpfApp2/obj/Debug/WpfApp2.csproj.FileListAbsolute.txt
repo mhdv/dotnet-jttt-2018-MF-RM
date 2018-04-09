@@ -79,3 +79,5 @@ C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Wp
 C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.nazwamigracjijakanamprzyszladoglowy.resources
 C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.newmig.resources
 C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.newmig543.resources
+C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Window1.baml
+C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Window1.g.cs

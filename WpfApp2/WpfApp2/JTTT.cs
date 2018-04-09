@@ -18,12 +18,20 @@ namespace WpfApp2
 
         public override string ToString()
         {
-            if(errorStr == "")
-                return "NA STRONIE: " + url + ", ZNAJDŹ: " + text + ", ORAZ WYŚLIJ NA: " + mail;
-            else if(errorStr == "complete")
-                return "SUKCES! NA STRONIE: " + url + ", ZNAJDŹ: " + text + ", ORAZ WYŚLIJ NA: " + mail;
+            if (errorStr == "")
+                return url + "    \\/\\    " + text + "    /\\/    " + mail;
+            else if (errorStr == "complete")
+                return "SUKCES! Wysłano obrazek z \"" + url + "\" na adres \"" + mail+"\"";
+            else if (errorStr == "image")
+                return "BŁĄD! Strona \"" + url + "\" nie zawiera obrazka z tagiem \"" + text+"\"";
+            else if (errorStr == "address")
+                return "BŁĄD! Nie odnaleziono strony \"" + url+"\"";
+            else if (errorStr == "internet")
+                return "BŁĄD! Sprawdź połączenie z internetem";
+            else if (errorStr == "mail")
+                return "BŁĄD! Podano niepoprawny adres e-mail \""+mail+"\"";
             else
-                return "BŁĄD! NA STRONIE: "+ url + ", ZNAJDŹ: " + text + ", ORAZ WYŚLIJ NA: " + mail;
+                return "BŁĄD! "+ url + "    ?∈    " + text + "    ->    " + mail;
         }
         public string FindImage(WebClient site)
         {

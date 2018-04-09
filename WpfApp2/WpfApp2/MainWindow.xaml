@@ -6,64 +6,71 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="MainWindow" Height="533" Width="948" Background="#FF1E1F26">
-   
+
     <Viewbox MinHeight="503" MinWidth="948" Stretch="Fill">
-     <Grid Height="533" Width="948">
+        <Grid Height="533" Width="948">
+            <Grid.Resources>
+                <ImageBrush x:Key="RefreshButtonImageBrush" ImageSource="C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\refresh.png" Stretch="UniformToFill"/>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="474*"/>
+                <ColumnDefinition Width="22*"/>
+                <ColumnDefinition Width="215*"/>
+                <ColumnDefinition Width="238*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="2*"/>
-        </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="4" Grid.RowSpan="12" Margin="0,0,0,-0.8">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
 
-        <Rectangle Grid.ColumnSpan="3" Grid.RowSpan="12">
-            <Rectangle.Fill>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                        <GradientStop Color="#FF08080E" Offset="0.2" />
 
-                    <GradientStop Color="Black" Offset="0.2" />
+                        <GradientStop Color="#FF2C2F3C" Offset="0.5" />
 
-                    <GradientStop Color="#FF26272B" Offset="0.5" />
-
-                    <GradientStop Color="Black" Offset="0.8" />
-
-
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
+                        <GradientStop Color="#FF08080F" Offset="0.8" />
 
 
-        <Label x:Name="jtttTxt" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="JTTT"  Width="173" FontSize="48" FontWeight="Bold" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
-        <TextBox x:Name="urlBox" Grid.Row="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Wprowadź URL strony" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="urlBox_OnGotFocus" FontSize="16"/>
-        <TextBox x:Name="textBox" Grid.Row="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Podaj tekst do wyszukania"  Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="textBox_OnGotFocus" FontSize="16"/>
-        <TextBox x:Name="mailBox" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Podaj mail do wysłania obrazka"  Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="mailBox_OnGotFocus" FontSize="16"/>
-        <Label x:Name="urlLabel" Grid.Row="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="URL"   Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Width="70" FontSize="16"/>
-        <Label x:Name="textLabel" Grid.Row="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content=" TEKST"  Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" FontSize="16"/>
-        <Button x:Name="starBtn" Grid.Row="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="DODAJ"  Width="84" Click="startBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30"/>
-        <Label x:Name="jesliTxt" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="JEŚLI TO" HorizontalAlignment="Center"  Height="66" Width="173" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
-        <Label x:Name="jesli2Txt" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYKONAJ TO" Width="248" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner"/>
-        <Label x:Name="mailLabel" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="MAIL"  Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" FontSize="16"/>
-        <Label x:Name="komunikaty" Grid.Row="9" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Praca programu" Width="114" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" FontSize="16"/>
-        <TextBox x:Name="outputBox" Grid.Row="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Oczekuje na użytkownika" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" IsReadOnly="True" FontSize="16"/>
-            <ListBox x:Name="tasksListBox" Grid.Row="1" Grid.RowSpan="6" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="239" VerticalAlignment="Center" Width="333" Background="#FF343946" AlternationCount="2"/>
-            <Button x:Name="workBtn" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYKONAJ" Click="workBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150" Grid.Column="1"/>
-        <Button x:Name="clearBtn" Grid.Row="9" Grid.RowSpan="2" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="CZYŚĆ" Click="clearBtn_Click" BorderBrush="#FF4D648D" Background="Black" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" Width="150" FontSize="20" Height="30"/>
-            <Label x:Name="listaTxt" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="LISTA ZADAŃ" Width="248" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Margin="112.8,0"/>
-            <Button x:Name="templateBtn" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="TEMPLATE" Click="templateBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150" Grid.Column="2"/>
-            <Button x:Name="removeBtn" Grid.Row="9" Grid.RowSpan="2" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="USUŃ" Click="removeBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" Width="150" FontSize="20" Height="30" Margin="43.4,18.2"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+
+            <Label x:Name="jtttTxt" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="JTTT"  Width="173" FontSize="48" FontWeight="Bold" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Margin="150,0,150.6,66" Grid.RowSpan="2"/>
+            <TextBox x:Name="urlBox" Grid.Row="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Wprowadź URL strony" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="urlBox_OnGotFocus" FontSize="16" Margin="110,4.4,109.6,4.2"/>
+            <TextBox x:Name="textBox" Grid.Row="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Podaj tekst do wyszukania"  Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="textBox_OnGotFocus" FontSize="16" Margin="110,4.2,109.6,4.4"/>
+            <TextBox x:Name="mailBox" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Podaj mail do wysłania obrazka"  Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" GotFocus="mailBox_OnGotFocus" FontSize="16" Margin="110,3.8,109.6,4.4"/>
+            <Label x:Name="urlLabel" Grid.Row="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="URL"   Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Width="70" FontSize="16" Margin="202,0,201.6,33.2" Grid.RowSpan="2"/>
+            <Label x:Name="textLabel" Grid.Row="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content=" TEKST"  Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" FontSize="16" Margin="203,33.4,202.6,33.4" Grid.RowSpan="3"/>
+            <Button x:Name="starBtn" Grid.Row="11" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="DODAJ" Click="startBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150" Margin="66,18.2,0,18.2"/>
+            <Label x:Name="jesliTxt" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="JEŚLI TO" HorizontalAlignment="Center"  Height="66" Width="173" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Margin="150,0.4,150.6,0"/>
+            <Label x:Name="jesli2Txt" Grid.Row="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYKONAJ TO" Width="248" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Margin="113,33.2,112.6,34.2" Grid.RowSpan="3"/>
+            <Label x:Name="mailLabel" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="MAIL"  Width="68" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" FontSize="16" Margin="203,0.2,202.6,0.2"/>
+            <Label x:Name="komunikaty" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Praca programu" Width="114" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" FontSize="16" Margin="180,32.8,179.6,32.8" Grid.RowSpan="3"/>
+            <TextBox x:Name="outputBox" Grid.Row="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25" TextWrapping="Wrap" Text="Oczekuje na użytkownika" Width="254" Background="#FF343946" Foreground="#FF8DAFEB" BorderBrush="#FF4D648D" IsReadOnly="True" FontSize="16" Margin="110,4.4,109.6,3.8"/>
+            <ListBox x:Name="tasksListBox" Grid.Row="1" Grid.RowSpan="6" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="262" VerticalAlignment="Center" Width="430" Background="#FF343946" Margin="0.6,0.4,22,4.8"/>
+            <Button x:Name="workBtn" Grid.Row="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WSZYSTKO" Click="workBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150" Grid.Column="2" Margin="21.6,2.2,43.4,34.2"/>
+            <Button x:Name="clearBtn" Grid.Row="11" Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WSZYSTKO" Click="clearBtn_Click" BorderBrush="#FF4D648D" Background="Black" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" Width="150" FontSize="20" Height="30" Margin="43.6,2.2,44,34.2"/>
+            <Label x:Name="listaTxt" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="LISTA ZADAŃ" Width="248" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Margin="91.6,0,113,66" Grid.RowSpan="2"/>
+            <Button x:Name="templateBtn" Grid.Row="11" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYPEŁNIJ" Click="templateBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150" Grid.Column="0" Margin="0,18.2,65.6,18.2"/>
+            <Button x:Name="removeBtn" Grid.Row="9" Grid.RowSpan="2" Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYBRANE" Click="removeBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" Width="150" FontSize="20" Height="30" Margin="43.6,10.6,44,25.8"/>
+            <Button x:Name="sWorkBtn" Grid.Row="9" Grid.RowSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYBRANE" Click="sWorkBtn_Click" BorderBrush="#FF4D648D" Background="#FF343946" Foreground="#FF8DAFEB" FontFamily="Sitka Heading" FontSize="20" Height="30" Width="150" Grid.Column="2" Margin="21.6,10.6,43.4,25.8"/>
+            <Label x:Name="dodajTxt" Grid.Row="7" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYKONAJ" HorizontalAlignment="Center"  Height="66" Width="172" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Margin="10.6,0.2,32.4,1.4" />
+            <Label x:Name="usunTxt" Grid.Row="7" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="USUŃ" HorizontalAlignment="Center"  Height="66" Width="173" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Margin="32.6,0.2,32,1.4"/>
+            <Button x:Name="refreshBtn" Background="{StaticResource RefreshButtonImageBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Grid.ColumnSpan="2"  HorizontalAlignment="Left" Height="50" Margin="424,0.4,0,0" VerticalAlignment="Top" Width="50" FontSize="30" Grid.Row="1" Click="refreshBtn_Click"/>
 
         </Grid>
     </Viewbox>
