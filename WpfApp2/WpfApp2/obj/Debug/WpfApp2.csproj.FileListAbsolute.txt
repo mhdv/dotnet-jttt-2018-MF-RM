@@ -1,112 +1,29 @@
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe.config
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\bin\Debug\WpfApp2.pdb
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csprojResolveAssemblyReference.cache
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\obj\Debug\MainWindow.g.cs
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\obj\Debug\App.g.cs
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.cache
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.lref
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\obj\Debug\MainWindow.baml
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\obj\Debug\WpfApp2.g.resources
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Properties.Resources.resources
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.GenerateResource.Cache
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.CoreCompileInputs.cache
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\obj\Debug\WpfApp2.exe
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\obj\Debug\WpfApp2.pdb
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.dll
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.pdb
-C:\Users\mehow\source\repos\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.xml
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe.config
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\WpfApp2.pdb
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.dll
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.pdb
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.xml
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csprojResolveAssemblyReference.cache
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\MainWindow.g.cs
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\App.g.cs
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.cache
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.lref
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\MainWindow.baml
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.g.resources
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Properties.Resources.resources
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.GenerateResource.Cache
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.exe
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.pdb
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.CoreCompileInputs.cache
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.CopyComplete
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe.config
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\bin\Debug\WpfApp2.pdb
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.dll
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.pdb
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.xml
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csprojResolveAssemblyReference.cache
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\obj\Debug\MainWindow.g.cs
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\obj\Debug\App.g.cs
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.cache
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.lref
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\obj\Debug\MainWindow.baml
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\obj\Debug\WpfApp2.g.resources
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Properties.Resources.resources
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.GenerateResource.Cache
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.CoreCompileInputs.cache
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\obj\Debug\WpfApp2.exe
-C:\Users\mehow\Documents\Visual Studio 2017\Projects\dotnet-jttt-2018-MF-RM-master\WpfApp2\WpfApp2\obj\Debug\WpfApp2.pdb
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe.config
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\WpfApp2.pdb
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.dll
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.pdb
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.xml
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csprojResolveAssemblyReference.cache
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\MainWindow.g.cs
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\App.g.cs
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.cache
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.lref
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\MainWindow.baml
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.g.resources
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Properties.Resources.resources
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.GenerateResource.Cache
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.CoreCompileInputs.cache
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.exe
-C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.pdb
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\EntityFramework.dll
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\EntityFramework.xml
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.InitialCreate.resources
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.nazwamigracjijakanamprzyszladoglowy.resources
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.newmig.resources
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.newmig543.resources
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Window1.baml
-C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Window1.g.cs
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe.config
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\WpfApp2.pdb
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\EntityFramework.dll
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.dll
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\EntityFramework.xml
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.pdb
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.xml
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csprojResolveAssemblyReference.cache
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Window1.baml
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\MainWindow.g.cs
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Window1.g.cs
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\App.g.cs
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.cache
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.lref
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\MainWindow.baml
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.g.resources
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.InitialCreate.resources
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.nazwamigracjijakanamprzyszladoglowy.resources
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.newmig.resources
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.newmig543.resources
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Properties.Resources.resources
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.GenerateResource.cache
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.CoreCompileInputs.cache
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.CopyComplete
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.exe
-C:\Users\RAFFAL\Source\Repos\clone\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\WpfApp2.pdb
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe.config
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\bin\Debug\WpfApp2.pdb
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\bin\Debug\EntityFramework.dll
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.dll
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\bin\Debug\EntityFramework.xml
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\bin\Debug\HtmlAgilityPack.xml
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csprojResolveAssemblyReference.cache
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\Window1.baml
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\MainWindow.g.cs
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\Window1.g.cs
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\App.g.cs
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.cache
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.lref
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\MainWindow.baml
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2.g.resources
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.InitialCreate.resources
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.nazwamigracjijakanamprzyszladoglowy.resources
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.newmig.resources
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.newmig543.resources
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Migrations.fixmig.resources
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Properties.Resources.resources
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.GenerateResource.Cache
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.CoreCompileInputs.cache
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2.exe
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM2\WpfApp2\WpfApp2\obj\Debug\WpfApp2.pdb

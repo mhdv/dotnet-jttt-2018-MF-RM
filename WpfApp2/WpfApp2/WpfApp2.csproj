@@ -75,12 +75,16 @@
       <DependentUpon>201804061053142_nazwa-migracji-jaka-nam-przyszla-do-glowy.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201804061101408_new-mig.cs" />
-    <Compile Include="Migrations\201804061101408_new-mig.Designer.cs">
+    <Compile Include="Migrations\201804061101408_new-mig.designer.cs">
       <DependentUpon>201804061101408_new-mig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201804061121293_new-mig543.cs" />
-    <Compile Include="Migrations\201804061121293_new-mig543.Designer.cs">
+    <Compile Include="Migrations\201804061121293_new-mig543.designer.cs">
       <DependentUpon>201804061121293_new-mig543.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804100119105_fix-mig.cs" />
+    <Compile Include="Migrations\201804100119105_fix-mig.Designer.cs">
+      <DependentUpon>201804100119105_fix-mig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SQLdb.cs" />
@@ -130,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804061121293_new-mig543.resx">
       <DependentUpon>201804061121293_new-mig543.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804100119105_fix-mig.resx">
+      <DependentUpon>201804100119105_fix-mig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

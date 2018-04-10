@@ -74,6 +74,20 @@ namespace WpfApp2
                 newTask.url = urlBox.Text;
                 newTask.text = textBox.Text;
                 newTask.mail = mailBox.Text;
+                if(mailCheck.IsChecked ?? true)
+                {
+                    newTask.sendmail = true;
+                }
+                if(saveCheck.IsChecked ?? true)
+                {
+                    newTask.saveas = true;
+                }
+                if(!newTask.sendmail && !newTask.saveas)
+                {
+                    outputBox.Background = Brushes.Red;
+                    outputBox.Text = "Wybierz co najmniej jedną opcje";
+                    return;
+                }
                 if (newTask.url == "" || newTask.text == "" || newTask.mail == "" || newTask.url == "Wprowadź URL strony" || newTask.text == "Podaj tekst do wyszukania" || newTask.mail == "Podaj mail na który wysłać obrazek")
                 {
                     outputBox.Background = Brushes.Red;
@@ -83,7 +97,7 @@ namespace WpfApp2
                 {
                     using(var ctx = new JTTTdbcontext())
                     {
-                        JTTTdb tmpTask = new JTTTdb { URL = newTask.url, mail = newTask.mail, text = newTask.text };
+                        JTTTdb tmpTask = new JTTTdb { URL = newTask.url, mail = newTask.mail, text = newTask.text, saveas = newTask.saveas, sendmail = newTask.sendmail};
                         ctx.task.Add(tmpTask);
                         ctx.SaveChanges();
                     }
@@ -268,6 +282,8 @@ namespace WpfApp2
                     tmp.url = item.URL;
                     tmp.text = item.text;
                     tmp.mail = item.mail;
+                    tmp.saveas = item.saveas;
+                    tmp.sendmail = item.sendmail;
                     tmp.ID = item.ID;
                     tasksList.Add(tmp);
                 }

@@ -9,6 +9,8 @@ namespace WpfApp2
 {
     public class JTTT
     {
+        public bool sendmail = false;
+        public bool saveas = false;
         public string url = "";
         public string text = "";
         public string mail = "";
@@ -18,10 +20,18 @@ namespace WpfApp2
 
         public override string ToString()
         {
-            if (errorStr == "")
+            if (errorStr == "" && this.saveas == true && this.sendmail == true)
+                return url + "    \\/\\    " + text + "    /\\/    " + mail + "    /\\/    " + " oraz zapisz na dysku.";
+            else if(errorStr == "" && this.sendmail == true)
                 return url + "    \\/\\    " + text + "    /\\/    " + mail;
-            else if (errorStr == "complete")
-                return "SUKCES! Wysłano obrazek z \"" + url + "\" na adres \"" + mail+"\"";
+            else if (errorStr == "" && this.saveas == true)
+                return "Zapisz na dysku" + "    \\/\\    " + url + "    \\/\\    " + text;
+            else if (errorStr == "complete" && this.saveas == true && this.sendmail == true)
+                return "SUKCES! Wysłano obrazek z \"" + url + "\" na adres \"" + mail+"\"" + " oraz zapisano obrazek.";
+            else if (errorStr == "complete" && this.saveas == true)
+                return "SUKCES! Zaspisano obrazek z \"" + url + "\" pod nazwą \"" + this.filename + "\"";
+            else if (errorStr == "complete" && this.sendmail == true)
+                return "SUKCES! Wysłano obrazek z \"" + url + "\" na adres \"" + mail + "\"";
             else if (errorStr == "image")
                 return "BŁĄD! Strona \"" + url + "\" nie zawiera obrazka z tagiem \"" + text+"\"";
             else if (errorStr == "address")
@@ -31,7 +41,7 @@ namespace WpfApp2
             else if (errorStr == "mail")
                 return "BŁĄD! Podano niepoprawny adres e-mail \""+mail+"\"";
             else
-                return "BŁĄD! "+ url + "    ?∈    " + text + "    ->    " + mail;
+                return "BŁĄD! "+ url + "    +    " + text + "    ->    " + mail + sendmail + saveas;
         }
         public string FindImage(WebClient site)
         {
@@ -177,12 +187,37 @@ namespace WpfApp2
                     if (linkToImage == "") { }
                     else
                     {
-                        this.filename = @".\meme.png";
-                        using (WebClient client = new WebClient())
+                        if (saveas)
                         {
-                            client.DownloadFile(linkToImage, this.filename);
+                            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+                            dlg.FileName = this.text; // Default file name
+                            dlg.DefaultExt = ".png"; // Default file extension
+                            dlg.Filter = "Image (.png)|*.png"; // Filter files by extension
+
+                            // Show save file dialog box
+                            Nullable<bool> resultBool = dlg.ShowDialog();
+
+                            // Process save file dialog box results
+                            if (resultBool == true)
+                            {
+                                // Save document
+                                this.filename = dlg.FileName;
+                            }
+                            using (WebClient client = new WebClient())
+                            {
+                                client.DownloadFile(linkToImage, this.filename);
+                            }
+                            errorStr = "complete";
                         }
-                        SendMail(linkToImage);
+                        this.filename = "meme.png";
+                        if(sendmail)
+                        {
+                            using (WebClient client = new WebClient())
+                            {
+                                client.DownloadFile(linkToImage, this.filename);
+                            }
+                            SendMail(linkToImage);
+                        }
 
                     }
                 }

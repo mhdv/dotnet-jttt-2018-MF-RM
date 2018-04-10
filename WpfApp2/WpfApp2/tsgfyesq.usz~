@@ -71,9 +71,9 @@
             <Label x:Name="dodajTxt" Grid.Row="7" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="WYKONAJ" HorizontalAlignment="Center"  Height="66" Width="172" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Margin="10.6,0.2,32.4,1.4" />
             <Label x:Name="usunTxt" Grid.Row="7" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="USUŃ" HorizontalAlignment="Center"  Height="66" Width="173" FontSize="36" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" Margin="32.6,0.2,32,1.4"/>
             <Button x:Name="refreshBtn" Background="{StaticResource RefreshButtonImageBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Grid.ColumnSpan="2"  HorizontalAlignment="Left" Height="50" Margin="424,0.4,0,0" VerticalAlignment="Top" Width="50" FontSize="30" Grid.Row="1" Click="refreshBtn_Click"/>
-            <CheckBox x:Name="mailCheck" IsChecked="True" Content="" HorizontalAlignment="Left" Margin="160,9,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <CheckBox x:Name="mailCheck" Content="" HorizontalAlignment="Left" Margin="160,9,0,0" Grid.Row="7" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
             <Label x:Name="mailLabel_Copy" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="ZAPISZ JAKO" Foreground="#FF8DAFEB" FontFamily="Sitka Banner" FontSize="16" Margin="233,65,144,1" Grid.RowSpan="2"/>
-            <CheckBox x:Name="saveCheck" Content="" HorizontalAlignment="Left" Margin="224,9,0,0" Grid.Row="7" VerticalAlignment="Top" Height="14" Width="19" RenderTransformOrigin="-0.929,0.624"/>
+            <CheckBox x:Name="saveCheck" Content="" HorizontalAlignment="Left" Margin="224,9,0,0" Grid.Row="7" VerticalAlignment="Top" Height="14" Width="19" RenderTransformOrigin="-0.929,0.624" Checked="saveCheck_Checked"/>
 
         </Grid>
     </Viewbox>
