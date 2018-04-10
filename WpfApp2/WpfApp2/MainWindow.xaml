@@ -10,7 +10,7 @@
     <Viewbox MinHeight="503" MinWidth="948" Stretch="Fill">
         <Grid Height="533" Width="948">
             <Grid.Resources>
-                <ImageBrush x:Key="RefreshButtonImageBrush" ImageSource="C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\refresh.png" Stretch="UniformToFill"/>
+                <ImageBrush x:Key="RefreshButtonImageBrush" ImageSource="refresh.png" Stretch="UniformToFill"/>
             </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="474*"/>
