@@ -27,6 +27,8 @@ namespace WpfApp2
         public MainWindow()
         {
             InitializeComponent();
+            comboBox.Items.Add("Wyślij maila");
+            comboBox.Items.Add("Zapisz jako");
             tasksListBox.ItemsSource = tasksList;
             updateList();
         }
@@ -74,15 +76,23 @@ namespace WpfApp2
                 newTask.url = urlBox.Text;
                 newTask.text = textBox.Text;
                 newTask.mail = mailBox.Text;
-                if(mailCheck.IsChecked ?? true)
+                /*if(mailCheck.IsChecked ?? true)
                 {
-                    newTask.sendmail = true;
+                    newTask.responsetype = "mail";
                 }
                 if(saveCheck.IsChecked ?? true)
                 {
-                    newTask.saveas = true;
+                    newTask.responsetype = "saveas";
+                }*/
+                if(comboBox.SelectedIndex == 0)
+                {
+                    newTask.responsetype = "mail";
                 }
-                if(!newTask.sendmail && !newTask.saveas)
+                if(comboBox.SelectedIndex == 1)
+                {
+                    newTask.responsetype = "saveas";
+                }
+                if(newTask.responsetype == "")
                 {
                     outputBox.Background = Brushes.Red;
                     outputBox.Text = "Wybierz co najmniej jedną opcje";
@@ -97,7 +107,7 @@ namespace WpfApp2
                 {
                     using(var ctx = new JTTTdbcontext())
                     {
-                        JTTTdb tmpTask = new JTTTdb { URL = newTask.url, mail = newTask.mail, text = newTask.text, saveas = newTask.saveas, sendmail = newTask.sendmail};
+                        JTTTdb tmpTask = new JTTTdb { URL = newTask.url, mail = newTask.mail, text = newTask.text, tasktype = newTask.tasktype, responsetype = newTask.responsetype};
                         ctx.task.Add(tmpTask);
                         ctx.SaveChanges();
                     }
@@ -282,8 +292,8 @@ namespace WpfApp2
                     tmp.url = item.URL;
                     tmp.text = item.text;
                     tmp.mail = item.mail;
-                    tmp.saveas = item.saveas;
-                    tmp.sendmail = item.sendmail;
+                    tmp.tasktype = item.tasktype;
+                    tmp.responsetype = item.responsetype;
                     tmp.ID = item.ID;
                     tasksList.Add(tmp);
                 }

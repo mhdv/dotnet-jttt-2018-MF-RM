@@ -9,8 +9,8 @@ namespace WpfApp2
 {
     public class JTTT
     {
-        public bool sendmail = false;
-        public bool saveas = false;
+        public string tasktype = "";
+        public string responsetype = "";
         public string url = "";
         public string text = "";
         public string mail = "";
@@ -20,28 +20,24 @@ namespace WpfApp2
 
         public override string ToString()
         {
-            if (errorStr == "" && this.saveas == true && this.sendmail == true)
-                return url + "    \\/\\    " + text + "    /\\/    " + mail + "    /\\/    " + " oraz zapisz na dysku.";
-            else if(errorStr == "" && this.sendmail == true)
+            if (errorStr == "" && responsetype == "mail")
                 return url + "    \\/\\    " + text + "    /\\/    " + mail;
-            else if (errorStr == "" && this.saveas == true)
+            else if (errorStr == "" && responsetype == "saveas")
                 return "Zapisz na dysku" + "    \\/\\    " + url + "    \\/\\    " + text;
-            else if (errorStr == "complete" && this.saveas == true && this.sendmail == true)
-                return "SUKCES! Wysłano obrazek z \"" + url + "\" na adres \"" + mail+"\"" + " oraz zapisano obrazek.";
-            else if (errorStr == "complete" && this.saveas == true)
-                return "SUKCES! Zaspisano obrazek z \"" + url + "\" pod nazwą \"" + this.filename + "\"";
-            else if (errorStr == "complete" && this.sendmail == true)
+            else if (errorStr == "complete" && responsetype == "mail")
                 return "SUKCES! Wysłano obrazek z \"" + url + "\" na adres \"" + mail + "\"";
+            else if (errorStr == "complete" && responsetype == "saveas")
+                return "SUKCES! Zaspisano obrazek z \"" + url + "\" pod nazwą \"" + this.filename + "\"";
             else if (errorStr == "image")
-                return "BŁĄD! Strona \"" + url + "\" nie zawiera obrazka z tagiem \"" + text+"\"";
+                return "BŁĄD! Strona \"" + url + "\" nie zawiera obrazka z tagiem \"" + text + "\"";
             else if (errorStr == "address")
-                return "BŁĄD! Nie odnaleziono strony \"" + url+"\"";
+                return "BŁĄD! Nie odnaleziono strony \"" + url + "\"";
             else if (errorStr == "internet")
                 return "BŁĄD! Sprawdź połączenie z internetem";
             else if (errorStr == "mail")
-                return "BŁĄD! Podano niepoprawny adres e-mail \""+mail+"\"";
+                return "BŁĄD! Podano niepoprawny adres e-mail \"" + mail + "\"";
             else
-                return "BŁĄD! "+ url + "    +    " + text + "    ->    " + mail + sendmail + saveas;
+                return "BŁĄD! " + url + "    +    " + text + "    ->    " + mail;
         }
         public string FindImage(WebClient site)
         {
@@ -187,7 +183,7 @@ namespace WpfApp2
                     if (linkToImage == "") { }
                     else
                     {
-                        if (saveas)
+                        if (responsetype == "saveas")
                         {
                             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
                             dlg.FileName = this.text; // Default file name
@@ -210,7 +206,7 @@ namespace WpfApp2
                             errorStr = "complete";
                         }
                         this.filename = "meme.png";
-                        if(sendmail)
+                        if(responsetype == "mail")
                         {
                             using (WebClient client = new WebClient())
                             {

@@ -14,8 +14,8 @@ namespace WpfApp2
         public string URL { get; set; }
         public string text { get; set; }
         public string mail { get; set; }
-        public bool saveas { get; set; }
-        public bool sendmail { get; set; }
+        public string tasktype { get; set; }
+        public string responsetype { get; set; }
 
         public override string ToString()
         {
