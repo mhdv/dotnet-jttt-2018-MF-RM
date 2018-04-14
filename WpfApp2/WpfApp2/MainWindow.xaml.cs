@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using System.Xml.Serialization;
 using System.Linq;
+using Newtonsoft.Json;
+using System.Net;
 
 namespace WpfApp2
 {
@@ -29,6 +31,9 @@ namespace WpfApp2
             InitializeComponent();
             comboBox.Items.Add("Wyślij maila");
             comboBox.Items.Add("Zapisz jako");
+            comboBox.Items.Add("Wyświetl");
+            comboBox2.Items.Add("Znajdź na stronie");
+            comboBox2.Items.Add("Podaj pogodę");
             tasksListBox.ItemsSource = tasksList;
             updateList();
         }
@@ -62,11 +67,8 @@ namespace WpfApp2
             worker.RunWorkerAsync();
         }
 
-        private void startBtn_Click(object sender, RoutedEventArgs e)
-        {
-            StartWork();
-            updateList();
-        }
+       
+       
 
         public void work()
         {
@@ -76,6 +78,7 @@ namespace WpfApp2
                 newTask.url = urlBox.Text;
                 newTask.text = textBox.Text;
                 newTask.mail = mailBox.Text;
+                newTask.city = urlBox.Text;
                 /*if(mailCheck.IsChecked ?? true)
                 {
                     newTask.responsetype = "mail";
@@ -84,7 +87,19 @@ namespace WpfApp2
                 {
                     newTask.responsetype = "saveas";
                 }*/
-                if(comboBox.SelectedIndex == 0)
+
+
+
+                if (comboBox2.SelectedIndex == 0)
+                {
+                    newTask.tasktype = "find";
+                }
+                if (comboBox2.SelectedIndex == 1)
+                {
+                    newTask.tasktype = "weather";
+                }
+
+                if (comboBox.SelectedIndex == 0)
                 {
                     newTask.responsetype = "mail";
                 }
@@ -92,13 +107,21 @@ namespace WpfApp2
                 {
                     newTask.responsetype = "saveas";
                 }
-                if(newTask.responsetype == "")
+                if(comboBox.SelectedIndex == 2)
+                {
+                    newTask.responsetype = "display";
+                }
+                if((comboBox.SelectedIndex==0) && (mailBox.Text=="" || mailBox.Text== "Podaj mail do wysłania obrazka" || mailBox.Text == "Podaj mail do wysłania pogody"))
+                {
+                        outputBox.Background = Brushes.Red;
+                        outputBox.Text = "Wypełnij wszystkie pola";
+                }
+               if((comboBox2.SelectedIndex==0) && (textBox.Text=="" || textBox.Text== "Podaj tekst do wyszukania"))
                 {
                     outputBox.Background = Brushes.Red;
-                    outputBox.Text = "Wybierz co najmniej jedną opcje";
-                    return;
+                    outputBox.Text = "Wypełnij wszystkie pola";
                 }
-                if (newTask.url == "" || newTask.text == "" || newTask.mail == "" || newTask.url == "Wprowadź URL strony" || newTask.text == "Podaj tekst do wyszukania" || newTask.mail == "Podaj mail na który wysłać obrazek")
+               if(urlBox.Text=="" || urlBox.Text== "Wprowadź URL strony" || urlBox.Text=="Wprowadź nazwę miasta")
                 {
                     outputBox.Background = Brushes.Red;
                     outputBox.Text = "Wypełnij wszystkie pola";
@@ -209,7 +232,7 @@ namespace WpfApp2
 
         private void urlBox_OnGotFocus(object sender, RoutedEventArgs e)
         {
-            if(urlBox.Text == "Wprowadź URL strony")
+            if (urlBox.Text == "Wprowadź URL strony" || urlBox.Text == "Wprowadź nazwę miasta") 
                 urlBox.Text = "";
         }
         private void textBox_OnGotFocus(object sender, RoutedEventArgs e)
@@ -219,7 +242,7 @@ namespace WpfApp2
         }
         private void mailBox_OnGotFocus(object sender, RoutedEventArgs e)
         {
-            if (mailBox.Text == "Podaj mail do wysłania obrazka")
+            if (mailBox.Text == "Podaj mail do wysłania obrazka" || mailBox.Text == "Podaj mail do wysłania pogody")
                 mailBox.Text = "";
         }
 
@@ -294,6 +317,7 @@ namespace WpfApp2
                     tmp.mail = item.mail;
                     tmp.tasktype = item.tasktype;
                     tmp.responsetype = item.responsetype;
+                    tmp.city = item.city;
                     tmp.ID = item.ID;
                     tasksList.Add(tmp);
                 }
@@ -351,6 +375,45 @@ namespace WpfApp2
             updateList();
             outputBox.Text = "Oczekuje na użytkownika";
             outputBox.Background = brush;
+        }
+
+        private void startBtn_Click(object sender, RoutedEventArgs e)
+        {
+            StartWork();
+            updateList();
+        }
+
+        private void comboBox2_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if(comboBox2.SelectedIndex==1)
+            {
+                textBox.Visibility = Visibility.Hidden;
+                textLabel.Visibility = Visibility.Hidden;
+                urlLabel.Content = "MIASTO";
+                urlBox.Text = "Wprowadź nazwę miasta";
+                mailBox.Text = "Podaj mail do wysłania pogody";
+            }
+            else if(comboBox2.SelectedIndex==0)
+            {
+                textBox.Visibility = Visibility.Visible;
+                textLabel.Visibility = Visibility.Visible;
+                urlLabel.Content = "URL";
+                urlBox.Text = "Wprowadź URL strony";
+                mailBox.Text = "Podaj mail do wysłania obrazka";
+            }
+        }
+
+        private void comboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if(comboBox.SelectedIndex==0)
+            {
+                mailBox.Visibility = Visibility.Visible;
+                
+            }
+            else 
+            {
+                mailBox.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

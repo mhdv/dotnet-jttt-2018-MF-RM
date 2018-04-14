@@ -16,6 +16,7 @@ namespace WpfApp2
         public string mail { get; set; }
         public string tasktype { get; set; }
         public string responsetype { get; set; }
+        public string city { get; set; }
 
         public override string ToString()
         {
