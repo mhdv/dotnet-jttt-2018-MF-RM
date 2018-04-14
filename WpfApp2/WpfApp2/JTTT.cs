@@ -4,6 +4,8 @@ using System;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
+using System.Reflection;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Xml.Serialization;
@@ -26,6 +28,8 @@ namespace WpfApp2
         public double temp;
         public int press;
         public int humid;
+        public string wetid;
+        public int tempCase;
 
 
         public override string ToString()
@@ -47,9 +51,13 @@ namespace WpfApp2
             else if (errorStr == "complete" && responsetype == "saveas" && tasktype == "weather")
                 return "SUKCES! Zapisano pogodę z miasta " + city + " pod nazwą \"" + this.filename + "\"";
             else if (errorStr == "" && responsetype == "display" && tasktype == "find")
-                return "Wyświetl " + url + "    \\/\\    " + text + "    /\\/    " + mail;
+                return "Wyświetl " + url + "    \\/\\    " + text;
+            else if (errorStr == "" && responsetype == "display" && tasktype == "weather")
+                return "Wyświetl pogodę w mieście " + city;
             else if (errorStr == "complete" && responsetype == "display" && tasktype == "find")
-                return "Sukces! Wyświetlono \"" + text + "\"z \"" + url + "\"";
+                return "SUKCES! Wyświetlono \"" + text + "\"z \"" + url + "\"";
+            else if (errorStr == "complete" && responsetype == "display" && tasktype == "weather")
+                return "SUKCES! Wyświetlono pogodę z miasta " + city;
             else if (errorStr == "image")
                 return "BŁĄD! Strona \"" + url + "\" nie zawiera obrazka z tagiem \"" + text + "\"";
             else if (errorStr == "address")
@@ -60,6 +68,8 @@ namespace WpfApp2
                 return "BŁĄD! Podano niepoprawny adres e-mail \"" + mail + "\"";
             else if (errorStr == "city")
                 return "BŁĄD! Podana nazwa miasta jest niepoprawna";
+            else if (errorStr == "temp")
+                return "BŁĄD! Temperatura w " + city + " jest mniejsza niż " + tempCase;
             else
                 return "BŁĄD! " + url + "    +    " + text + "    ->    " + mail;
         }
@@ -141,7 +151,7 @@ namespace WpfApp2
                 var toAddress = new MailAddress(this.mail, "");
                 const string fromPassword = "haselkomaselko";
                 const string subject = "Wiadomość z programu JTTT";
-                string body = "Wiadomość wygenerowana automatycznie, oto dzisiejsza pogoda w mieście: " + name + "\n" +
+                string body = "Wiadomość wygenerowana automatycznie, oto dzisiejsza pogoda w mieście: " + city + "\n" +
                     "Temperatura powietrza wynosi " + temp + " stopni.\n" +
                     "Ciśnienie wynosi " + press + " hektopaskali.\n" +
                     "Wilgotność powietrza na poziomie " + humid + ".\n" +
@@ -238,77 +248,97 @@ namespace WpfApp2
 
         public void work()
         {
-            if (tasktype == "find")
+            if (checkForInternetConnection())
             {
-                WebClient site = new WebClient();
-                Uri uriResult;
-                bool result = Uri.TryCreate(this.url, UriKind.Absolute, out uriResult)
-                    && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
-                if (result)
+                if (tasktype == "find")
                 {
-                    string linkToImage = FindImage(site);
-                    if (responsetype == "saveas")
+                    WebClient site = new WebClient();
+                    Uri uriResult;
+                    bool result = Uri.TryCreate(this.url, UriKind.Absolute, out uriResult)
+                        && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+                    if (result)
                     {
-                        Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-                        dlg.FileName = this.text; // Default file name
-                        dlg.DefaultExt = ".png"; // Default file extension
-                        dlg.Filter = "Image (.png)|*.png"; // Filter files by extension
-
-                        // Show save file dialog box
-                        Nullable<bool> resultBool = dlg.ShowDialog();
-
-                        // Process save file dialog box results
-                        if (resultBool == true)
+                        string linkToImage = FindImage(site);
+                        if (linkToImage == "")
                         {
-                            // Save document
-                            this.filename = dlg.FileName;
+                            errorStr = "image";
+                            return;
                         }
-                        using (WebClient client = new WebClient())
+                        if (responsetype == "saveas")
                         {
-                            client.DownloadFile(linkToImage, this.filename);
+                            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+                            dlg.FileName = this.text; // Default file name
+                            dlg.DefaultExt = ".png"; // Default file extension
+                            dlg.Filter = "Image (.png)|*.png"; // Filter files by extension
+
+                            // Show save file dialog box
+                            Nullable<bool> resultBool = dlg.ShowDialog();
+
+                            // Process save file dialog box results
+                            if (resultBool == true)
+                            {
+                                // Save document
+                                this.filename = dlg.FileName;
+                            }
+                            using (WebClient client = new WebClient())
+                            {
+                                client.DownloadFile(linkToImage, this.filename);
+                            }
+                            errorStr = "complete";
                         }
-                        errorStr = "complete";
-                    }
-                    this.filename = "meme.png";
-                    if (responsetype == "mail")
-                    {
-                        using (WebClient client = new WebClient())
+                        this.filename = "meme.png";
+                        if (responsetype == "mail")
                         {
-                            client.DownloadFile(linkToImage, this.filename);
+                            using (WebClient client = new WebClient())
+                            {
+                                client.DownloadFile(linkToImage, this.filename);
+                            }
+                            if (!SendMail(linkToImage))
+                                errorStr = "address";
                         }
-                        if (!SendMail(linkToImage))
-                            errorStr = "address";
-                    }
-                    if (responsetype == "display" /*&& tasktype=="meme"*/)
-                    {
-
-
-                        //var image = new Image();
-                        //BitmapImage bitmap = new BitmapImage();
-                        //bitmap.BeginInit();
-                        //bitmap.UriSource = new Uri(linkToImage, UriKind.Absolute);
-                        //bitmap.EndInit();
-                        //image.Source = bitmap;
-
-                        using (WebClient client = new WebClient())
+                        this.filename = "meme.png";
+                        if (responsetype == "display" /*&& tasktype=="meme"*/)
                         {
-                            client.DownloadFile(linkToImage, this.filename);
+
+
+                            //var image = new Image();
+                            //BitmapImage bitmap = new BitmapImage();
+                            //bitmap.BeginInit();
+                            //bitmap.UriSource = new Uri(linkToImage, UriKind.Absolute);
+                            //bitmap.EndInit();
+                            //image.Source = bitmap;
+                            Window2 win2 = new Window2();
+                            var image = new Image();
+                            var fullFilePath = linkToImage;
+
+                            BitmapImage bitmap = new BitmapImage();
+                            bitmap.BeginInit();
+                            bitmap.UriSource = new Uri(fullFilePath, UriKind.Absolute);
+                            bitmap.EndInit();
+
+                            image.Source = bitmap;
+
+                            win2.canvas.Children.Add(image);
+
+
+                            using (WebClient client = new WebClient())
+                            {
+                                client.DownloadFile(linkToImage, this.filename);
+                            }
+
+                            win2.ShowDialog();
+
+                            errorStr = "complete";
                         }
-
-                        Window2 win2 = new Window2(linkToImage);
-                        win2.ShowDialog();
-
-
                     }
                 }
-            }
-            else if (tasktype == "weather")
-            {
-                if (responsetype == "mail")
+                else if (tasktype == "weather")
                 {
                     using (WebClient client = new WebClient())
                     {
-                        city = "Wroclaw"; ////////////////////////////////////////////////////////////
+                        string fullcityname = city[0].ToString().ToUpper() + city.Substring(1).ToLower();
+
+                        city = fullcityname;
                         string weatherJson = client.DownloadString(findweather(city));
                         var wth = JsonConvert.DeserializeObject<jsonClass.RootObject>(weatherJson);
 
@@ -317,55 +347,83 @@ namespace WpfApp2
                         this.press = wth.main.pressure;
                         this.humid = wth.main.humidity;
                         this.desc = wth.weather[0].description;
+                        int tmpInd = weatherJson.IndexOf("\"icon\":\"");
+                        this.wetid = weatherJson.Substring(tmpInd + "\"icon\":\"".Length, 3);
                     }
-
-                    if (!SendWeather())
-                        errorStr = "address";
-                }
-
-                else if (responsetype == "saveas")
-                {
-                    using (WebClient client = new WebClient())
+                    if(tempCase < this.temp)
                     {
-                        city = "Wroclaw"; ////////////////////////////////////////////////////////////
-                        string weatherJson = client.DownloadString(findweather(city));
-                        var wth = JsonConvert.DeserializeObject<jsonClass.RootObject>(weatherJson);
+                        if (responsetype == "mail")
+                        {
+                            if (!SendWeather())
+                                errorStr = "address";
+                        }
 
-                        this.name = wth.name;
-                        this.temp = wth.main.temp;
-                        this.press = wth.main.pressure;
-                        this.humid = wth.main.humidity;
-                        this.desc = wth.weather[0].description;
+                        else if (responsetype == "saveas")
+                        {
+                            string content = "Oto dzisiejsza pogoda w mieście: " + name + "\n" +
+                " Temperatura powietrza wynosi " + temp + " stopni.\n" +
+                "Ciśnienie wynosi " + press + " hektopaskali.\n" +
+                "Wilgotność powietrza na poziomie " + humid + ".\n" +
+                "Ogólnie pogodę można opisać słowami: " + desc + ".";
+                            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+                            dlg.FileName = "pogoda"; // Default file name
+                            dlg.DefaultExt = ".txt"; // Default file extension
+                            dlg.Filter = "txt files (*.txt)|*.txt"; // Filter files by extension
+
+                            // Show save file dialog box
+                            Nullable<bool> resultBool = dlg.ShowDialog();
+
+                            // Process save file dialog box results
+                            if (resultBool == true)
+                            {
+                                // Save document
+                                StreamWriter writer = new StreamWriter(dlg.OpenFile());
+                                writer.Write(content);
+                                writer.Dispose();
+                                writer.Close();
+                                this.filename = dlg.FileName;
+                            }
+                            errorStr = "complete";
+                        }
+                        else if (responsetype == "display")
+                        {
+                            string content = "Oto dzisiejsza pogoda w mieście: " + name + "\n" +
+                "Temperatura powietrza wynosi " + temp + " stopni.\n" +
+                "Ciśnienie wynosi " + press + " hektopaskali.\n" +
+                "Wilgotność powietrza na poziomie " + humid + ".\n" +
+                "Ogólnie pogodę można opisać słowami: " + desc + ".";
+                            Window3 win3 = new Window3();
+                            win3.label.Content = content;
+
+                            var image = new Image();
+
+                            var fullFilePath = @"http://openweathermap.org/img/w/" + this.wetid + ".png";
+                            Console.WriteLine(this.wetid);
+
+                            BitmapImage bitmap = new BitmapImage();
+                            bitmap.BeginInit();
+                            bitmap.UriSource = new Uri(fullFilePath, UriKind.Absolute);
+                            bitmap.EndInit();
+
+                            image.Source = bitmap;
+
+                            win3.weatherIcon.Children.Add(image);
+
+                            win3.ShowDialog();
+                        }
+
                     }
-
-                        string content = "Oto dzisiejsza pogoda w mieście: " + name + "\n" +
-            "Temperatura powietrza wynosi " + temp + " stopni.\n" +
-            "Ciśnienie wynosi " + press + " hektopaskali.\n" +
-            "Wilgotność powietrza na poziomie " + humid + ".\n" +
-            "Ogólnie pogodę można opisać słowami: " + desc + ".";
-                    Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-                    dlg.FileName = "pogoda"; // Default file name
-                    dlg.DefaultExt = ".txt"; // Default file extension
-                    dlg.Filter = "txt files (*.txt)|*.txt"; // Filter files by extension
-
-                    // Show save file dialog box
-                    Nullable<bool> resultBool = dlg.ShowDialog();
-
-                    // Process save file dialog box results
-                    if (resultBool == true)
+                    else
                     {
-                        // Save document
-                        StreamWriter writer = new StreamWriter(dlg.OpenFile());
-                        writer.Write(content);
-                        writer.Dispose();
-                        writer.Close();
-                        this.filename = dlg.FileName;
+                        errorStr = "temp";
                     }
-                    errorStr = "complete";
-                }
 
+
+                }
 
             }
+            else { errorStr = "internet"; return; }
+            
 
 
             

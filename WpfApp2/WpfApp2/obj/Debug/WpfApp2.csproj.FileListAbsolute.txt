@@ -80,3 +80,9 @@ C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\Ne
 C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\Newtonsoft.Json.xml
 C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Window2.g.cs
 C:\Users\RAFFAL\Source\Repos\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Window2.baml
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Window2.g.cs
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Window2.baml
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Window3.g.cs
+C:\Users\mehow\GIT\dotnet-jttt-2018-MF-RM\WpfApp2\WpfApp2\obj\Debug\Window3.baml

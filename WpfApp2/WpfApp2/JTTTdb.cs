@@ -17,6 +17,7 @@ namespace WpfApp2
         public string tasktype { get; set; }
         public string responsetype { get; set; }
         public string city { get; set; }
+        public int tempCase { get; set; }
 
         public override string ToString()
         {

@@ -8,34 +8,20 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace WpfApp2
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window2.xaml
+    /// Logika interakcji dla klasy Window3.xaml
     /// </summary>
-    public partial class Window2 : Window
+    public partial class Window3 : Window
     {
-        private Image image;
-
-        public Image Image { get; set; }
-
-
-        public Window2()
+        public Window3()
         {
             InitializeComponent();
         }
-
-        /*public Window2(string imgsrc):this()
-
-        {
-            
-            Image img = new Image();
-            img.Source = new BitmapImage(new Uri(imgsrc, UriKind.Absolute));
-          
-
-        }*/
     }
 }

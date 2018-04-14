@@ -10,6 +10,8 @@ using System.Xml.Serialization;
 using System.Linq;
 using Newtonsoft.Json;
 using System.Net;
+using System.Windows.Input;
+using System.Text.RegularExpressions;
 
 namespace WpfApp2
 {
@@ -79,17 +81,8 @@ namespace WpfApp2
                 newTask.text = textBox.Text;
                 newTask.mail = mailBox.Text;
                 newTask.city = urlBox.Text;
-                /*if(mailCheck.IsChecked ?? true)
-                {
-                    newTask.responsetype = "mail";
-                }
-                if(saveCheck.IsChecked ?? true)
-                {
-                    newTask.responsetype = "saveas";
-                }*/
-
-
-
+                newTask.tempCase = Int32.Parse(numberTextBox.Text);
+                
                 if (comboBox2.SelectedIndex == 0)
                 {
                     newTask.tasktype = "find";
@@ -113,24 +106,33 @@ namespace WpfApp2
                 }
                 if((comboBox.SelectedIndex==0) && (mailBox.Text=="" || mailBox.Text== "Podaj mail do wysłania obrazka" || mailBox.Text == "Podaj mail do wysłania pogody"))
                 {
-                        outputBox.Background = Brushes.Red;
-                        outputBox.Text = "Wypełnij wszystkie pola";
+                    outputBox.Background = Brushes.Red;
+                    outputBox.Text = "Wypełnij wszystkie pola";
+                    return;
                 }
-               if((comboBox2.SelectedIndex==0) && (textBox.Text=="" || textBox.Text== "Podaj tekst do wyszukania"))
+                if ((comboBox2.SelectedIndex == 1) && (numberTextBox.Text == "" || numberTextBox.Text == "Podaj warunek temperaturowy"))
                 {
                     outputBox.Background = Brushes.Red;
                     outputBox.Text = "Wypełnij wszystkie pola";
+                    return;
+                }
+                if ((comboBox2.SelectedIndex==0) && (textBox.Text=="" || textBox.Text== "Podaj tekst do wyszukania"))
+                {
+                    outputBox.Background = Brushes.Red;
+                    outputBox.Text = "Wypełnij wszystkie pola";
+                    return;
                 }
                if(urlBox.Text=="" || urlBox.Text== "Wprowadź URL strony" || urlBox.Text=="Wprowadź nazwę miasta")
                 {
                     outputBox.Background = Brushes.Red;
                     outputBox.Text = "Wypełnij wszystkie pola";
+                    return;
                 }
                 else
                 {
                     using(var ctx = new JTTTdbcontext())
                     {
-                        JTTTdb tmpTask = new JTTTdb { URL = newTask.url, mail = newTask.mail, text = newTask.text, tasktype = newTask.tasktype, responsetype = newTask.responsetype};
+                        JTTTdb tmpTask = new JTTTdb { URL = newTask.url, mail = newTask.mail, text = newTask.text, city = newTask.city, tasktype = newTask.tasktype, responsetype = newTask.responsetype, tempCase = newTask.tempCase};
                         ctx.task.Add(tmpTask);
                         ctx.SaveChanges();
                     }
@@ -245,6 +247,11 @@ namespace WpfApp2
             if (mailBox.Text == "Podaj mail do wysłania obrazka" || mailBox.Text == "Podaj mail do wysłania pogody")
                 mailBox.Text = "";
         }
+        private void numberTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (numberTextBox.Text == "Podaj warunek temperaturowy")
+                numberTextBox.Text = "";
+        }
 
         private void workBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -273,9 +280,18 @@ namespace WpfApp2
 
         private void templateBtn_Click(object sender, RoutedEventArgs e)
         {
-            urlBox.Text = "http://demotywatory.pl";
-            textBox.Text = "Polska";
-            mailBox.Text = "mehowpol@gmail.com";
+            if (comboBox2.SelectedIndex == 0)
+            {
+                urlBox.Text = "http://demotywatory.pl";
+                textBox.Text = "Polska";
+                mailBox.Text = "mehowpol@gmail.com";
+            }
+            if (comboBox2.SelectedIndex == 1)
+            {
+                urlBox.Text = "Wroclaw";
+                mailBox.Text = "mehowpol@gmail.com";
+                numberTextBox.Text = "15";
+            }
         }
 
         private void clearBtn_Click(object sender, RoutedEventArgs e)
@@ -319,6 +335,7 @@ namespace WpfApp2
                     tmp.responsetype = item.responsetype;
                     tmp.city = item.city;
                     tmp.ID = item.ID;
+                    tmp.tempCase = item.tempCase;
                     tasksList.Add(tmp);
                 }
 
@@ -388,7 +405,9 @@ namespace WpfApp2
             if(comboBox2.SelectedIndex==1)
             {
                 textBox.Visibility = Visibility.Hidden;
-                textLabel.Visibility = Visibility.Hidden;
+                //textLabel.Visibility = Visibility.Hidden;
+                numberTextBox.Visibility = Visibility.Visible;
+                textLabel.Content = "WARUNEK";
                 urlLabel.Content = "MIASTO";
                 urlBox.Text = "Wprowadź nazwę miasta";
                 mailBox.Text = "Podaj mail do wysłania pogody";
@@ -396,7 +415,9 @@ namespace WpfApp2
             else if(comboBox2.SelectedIndex==0)
             {
                 textBox.Visibility = Visibility.Visible;
-                textLabel.Visibility = Visibility.Visible;
+                //textLabel.Visibility = Visibility.Visible;
+                numberTextBox.Visibility = Visibility.Hidden;
+                textLabel.Content = "TEKST";
                 urlLabel.Content = "URL";
                 urlBox.Text = "Wprowadź URL strony";
                 mailBox.Text = "Podaj mail do wysłania obrazka";
@@ -414,6 +435,11 @@ namespace WpfApp2
             {
                 mailBox.Visibility = Visibility.Hidden;
             }
+        }
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }
