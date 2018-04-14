@@ -81,7 +81,9 @@ namespace WpfApp2
                 newTask.text = textBox.Text;
                 newTask.mail = mailBox.Text;
                 newTask.city = urlBox.Text;
-                newTask.tempCase = Int32.Parse(numberTextBox.Text);
+                if (numberTextBox.Text != "" && numberTextBox.Text != "Podaj warunek temperaturowy")
+                    newTask.tempCase = Int32.Parse(numberTextBox.Text);
+                else newTask.tempCase = 0;
                 
                 if (comboBox2.SelectedIndex == 0)
                 {
