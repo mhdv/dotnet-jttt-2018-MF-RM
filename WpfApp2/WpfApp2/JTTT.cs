@@ -143,7 +143,7 @@ namespace WpfApp2
                 const string subject = "Wiadomość z programu JTTT";
                 string body = "Wiadomość wygenerowana automatycznie, oto dzisiejsza pogoda w mieście: " + name + "\n" +
                     "Temperatura powietrza wynosi " + temp + " stopni.\n" +
-                    "Ciśnienie wynosi " + press + " paskali.\n" +
+                    "Ciśnienie wynosi " + press + " hektopaskali.\n" +
                     "Wilgotność powietrza na poziomie " + humid + ".\n" +
                     "Ogólnie pogodę można opisać słowami: " + desc + ".";
 
@@ -340,7 +340,7 @@ namespace WpfApp2
 
                         string content = "Oto dzisiejsza pogoda w mieście: " + name + "\n" +
             "Temperatura powietrza wynosi " + temp + " stopni.\n" +
-            "Ciśnienie wynosi " + press + " paskali.\n" +
+            "Ciśnienie wynosi " + press + " hektopaskali.\n" +
             "Wilgotność powietrza na poziomie " + humid + ".\n" +
             "Ogólnie pogodę można opisać słowami: " + desc + ".";
                     Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
@@ -376,7 +376,7 @@ namespace WpfApp2
             {
                 string weatherLink = "";
                 string appId = "014b5d4258bc8726f9bda9865f5a7a66";
-                weatherLink = "http://api.openweathermap.org/data/2.5/weather?q=" + city + ",pl&APPID=" + appId;
+                weatherLink = "http://api.openweathermap.org/data/2.5/weather?q=" + city + ",pl&units=metric&APPID=" + appId;
 
                 return weatherLink;
             }
